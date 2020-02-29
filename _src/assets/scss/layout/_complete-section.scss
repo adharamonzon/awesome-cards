@@ -1,9 +1,36 @@
 .complete-section {
-  border: rebeccapurple solid 2px;
+  border-bottom: rebeccapurple solid 2px;
+  // cambiar a border-bottom+color
+  padding: 0.625rem 0rem 1.875rem 0rem;
+  &__title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 1.5rem;
+    &__icon {
+      margin-right: 0.625rem;
+      width: 1.313rem;
+      height: 1.125rem;
+    }
+    &__title {
+      height: 1.5rem;
+      width: 4.875rem;
+      // ¿cambiar por font-size?
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
 }
+
 .form {
-  display: flex;
-  flex-direction: column;
+  &__label {
+    margin: 1.25rem 0rem 0.438rem 0rem;
+  }
+  &__input {
+    margin: 0rem;
+  }
 }
 .image-fields {
   display: flex;
