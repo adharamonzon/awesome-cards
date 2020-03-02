@@ -1,8 +1,33 @@
-.share {
+.share--collapsed {
 }
 
 .share__title {
   font-size: 1.125rem;
   color: #54585a;
   font-family: $font-secondary;
+}
+.share__icon-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 1.438rem;
+}
+.share__items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fa-share-alt {
+  font-size: 1.125rem;
+  color: $color-orange;
+}
+.share__btn--enabled {
+  display: inline;
+  background-color: $color-orange;
+  color: $color-white;
+}
+.share--uncollapsed {
+  display: flex;
+  flex-direction: column;
 }
