@@ -1,11 +1,11 @@
 .complete-section {
-  border-bottom: rebeccapurple solid 2px;
-  // cambiar a border-bottom+color
+  border-bottom: solid #d8d8d8 0.063rem;
   padding: 0.625rem 0rem 1.875rem 0rem;
   &__title-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
     height: 1.5rem;
     &__icon {
       margin-right: 0.625rem;
@@ -35,6 +35,9 @@
     margin: 0rem;
     border: $color-light-green solid 0.063rem;
     height: 1.875rem;
+    color: #c5c5c5;
+    font-size: 0.875rem;
+    font-family: $font-secondary;
   }
   &__image-fields {
     display: flex;
@@ -51,9 +54,14 @@
     width: 8.75rem;
     color: $color-white;
     border-radius: 0.188rem;
+    border-color: transparent;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    padding: 0.188rem 1.375rem 0.438rem 1.375rem;
   }
   &__mini-image {
-    border: pink solid 2px;
+    border: $color-light-green solid 0.063rem;
+    height: 1.875rem;
+    width: 1.875rem;
+    margin-left: 1.875rem;
   }
 }
