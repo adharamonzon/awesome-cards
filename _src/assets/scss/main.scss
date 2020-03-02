@@ -1,5 +1,8 @@
 @import 'core/settings';
 @import 'core/reset';
-@import 'layout/landing-page';
 
+@import 'layout/landing-page';
 @import 'layout/footer';
+
+@import 'mediaqueries/landing-page';
+@import 'mediaqueries/user-interface';
