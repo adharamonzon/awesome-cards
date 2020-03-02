@@ -1,12 +1,12 @@
 .main-landing {
-  padding: 95px 35px 30px 35px;
+  padding: 5.93rem 2.18rem 1.87rem 2.18rem;
   background-color: #f5f5f5;
   text-align: center;
   width: 100%;
   .img-container {
     display: inline-block;
-    width: 250px;
-    padding-bottom: 35px;
+    width: 15.62rem;
+    padding-bottom: 2.18rem;
     &__image {
       width: 100%;
     }
@@ -14,30 +14,30 @@
   &__title {
     font-family: $font-main;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 1.18rem;
     color: $color-orange;
   }
   &__subtitle {
     font-family: $font-secondary;
     font-weight: lighter;
-    font-size: 13px;
+    font-size: 0.81rem;
     color: $color-dark-green;
-    padding-bottom: 18px;
+    padding-bottom: 1.12rem;
   }
   .info {
     display: flex;
     justify-content: space-around;
-    border: solid #fde2d3 1.6px;
-    border-radius: 4px;
+    border: solid #fde2d3 0.1rem;
+    border-radius: 0.25rem;
     border-collapse: 21%;
-    margin-bottom: 49px;
+    margin-bottom: 2.37rem;
     &__icon-container {
       opacity: 100%;
-      padding: 15px 20px 10px 20px;
+      padding: 0.93rem 1.25rem 0.62rem 1.25rem;
     }
     &__icon {
-      width: 32px;
-      height: 26px;
+      width: 2rem;
+      height: 1.62rem;
     }
     &__text {
       font-family: $font-secondary;
@@ -51,10 +51,10 @@
     justify-content: center;
     position: relative;
     margin: auto;
-    border-radius: 21px;
+    border-radius: 1.31rem;
     background-color: $color-blue;
-    width: 120px;
-    height: 42px;
+    width: 7.5rem;
+    height: 2.62rem;
     &__btn {
       text-decoration: none;
       text-transform: uppercase;
