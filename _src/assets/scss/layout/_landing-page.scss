@@ -4,23 +4,24 @@
   text-align: center;
   width: 100%;
   .img-container {
+    display: inline-block;
     width: 250px;
     padding-bottom: 35px;
-    .image {
+    &__image {
       width: 100%;
     }
   }
-  .title {
-    font-family: 'Merriweather';
+  &__title {
+    font-family: $font-main;
     font-weight: bold;
     font-size: 19px;
-    color: #e17334;
+    color: $color-orange;
   }
-  .subtitle {
-    font-family: 'Open Sans';
+  &__subtitle {
+    font-family: $font-secondary;
     font-weight: lighter;
     font-size: 13px;
-    color: #114e4e;
+    color: $color-dark-green;
     padding-bottom: 18px;
   }
   .info {
@@ -30,35 +31,35 @@
     border-radius: 4px;
     border-collapse: 21%;
     margin-bottom: 49px;
-    .icon-container {
+    &__icon-container {
       opacity: 100%;
       padding: 15px 20px 10px 20px;
     }
-    .icon {
+    &__icon {
       width: 32px;
       height: 26px;
     }
-    .text {
-      font-family: 'Open Sans';
-      color: #54585a;
+    &__text {
+      font-family: $font-secondary;
+      color: $color-grey;
       text-align: center;
     }
   }
-  .btn-container {
+  .container {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     margin: auto;
     border-radius: 21px;
-    background-color: #438792;
+    background-color: $color-blue;
     width: 120px;
     height: 42px;
-    .btn {
+    &__btn {
       text-decoration: none;
       text-transform: uppercase;
-      font-family: 'Open Sans';
-      color: #ffff;
+      font-family: $font-secondary;
+      color: $color-white;
     }
   }
 }
