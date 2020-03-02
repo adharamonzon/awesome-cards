@@ -1,5 +1,18 @@
 .rectangle {
-  width: 30px;
-  height: 25px;
-  background-color: $color-dark-green;
+  display: flex;
+  &__1 {
+    width: 30px;
+    height: 25px;
+    background-color: $color-dark-green;
+  }
+  &__2 {
+    width: 30px;
+    height: 25px;
+    background-color: $color-blue;
+  }
+  &__3 {
+    width: 30px;
+    height: 25px;
+    background-color: $color-light-green;
+  }
 }
