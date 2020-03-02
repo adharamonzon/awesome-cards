@@ -28,16 +28,32 @@
   &__label {
     margin: 1.25rem 0rem 0.438rem 0rem;
     font-family: $font-secondary;
+    color: $color-dark-green;
     font-size: 0.875rem;
   }
   &__input {
     margin: 0rem;
+    border: $color-light-green solid 0.063rem;
+    height: 1.875rem;
+  }
+  &__image-fields {
+    display: flex;
+    flex-direction: row;
   }
 }
+
 .image-fields {
-  display: flex;
-  flex-direction: row;
-}
-.mini-image {
-  border: pink solid 2px;
+  &__image-button {
+    font-family: $font-secondary;
+    font-size: 0.875rem;
+    background-color: $color-orange;
+    height: 1.875rem;
+    width: 8.75rem;
+    color: $color-white;
+    border-radius: 0.188rem;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+  }
+  &__mini-image {
+    border: pink solid 2px;
+  }
 }
