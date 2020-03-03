@@ -1,14 +1,17 @@
 .footer {
   text-align: center;
-  margin: 18px 61px 20px 61px;
-  .text {
-    font-family: 'Open Sans';
-    font-size: 14px;
-    line-height: 20px;
+  margin: 1.12rem 3.81rem 1.25rem 3.81rem;
+  height: 5.75rem;
+  &__text {
+    font-family: $font-secondary;
+    font-size: 0.87rem;
+    line-height: 1.25rem;
     color: #6b6b6b;
+    opacity: 50%;
+    padding-bottom: 0.75rem;
   }
-  .logo {
-    width: 103px;
-    height: 40px;
+  &__logo {
+    width: 6.43rem;
+    height: 2.5rem;
   }
 }
