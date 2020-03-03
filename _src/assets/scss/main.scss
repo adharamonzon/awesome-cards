@@ -1,11 +1,11 @@
-@import 'core/settings';
-@import 'core/reset';
+@import "core/settings";
+@import "core/reset";
 @import "_header";
 @import "layout/card";
 
+@import "layout/landing-page";
+@import "layout/footer";
+@import "layout/share-section";
 
-@import 'layout/landing-page';
-@import 'layout/footer';
-
-@import 'mediaqueries/landing-page';
-@import 'mediaqueries/user-interface';
+@import "mediaqueries/landing-page";
+@import "mediaqueries/user-interface";

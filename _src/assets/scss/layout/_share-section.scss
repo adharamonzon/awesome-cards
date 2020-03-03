@@ -1,18 +1,23 @@
 .share--collapsed {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .share__title {
   font-size: 1.125rem;
   color: #54585a;
   font-family: $font-secondary;
+  padding-left: 0.75rem;
+  text-transform: uppercase;
 }
 .share__icon-title {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-left: 1.438rem;
 }
 .share__items {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,10 +27,25 @@
   font-size: 1.125rem;
   color: $color-orange;
 }
+.fa-chevron-up {
+}
 .share__btn--enabled {
-  display: inline;
+  display: flex;
+  flex-direction: row;
   background-color: $color-orange;
   color: $color-white;
+  width: 12.44rem;
+  height: 3.125rem;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.32);
+}
+.share__title--white {
+  padding-left: 0.875rem;
+  text-transform: uppercase;
+  font-family: $font-secondary;
+}
+.fa-address-card {
+  margin-left: 1.063rem;
 }
 .share--uncollapsed {
   display: flex;
