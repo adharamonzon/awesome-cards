@@ -12,8 +12,11 @@
     }
   }
   .info {
-    width: 352px;
+    width: 20.31rem;
     margin: auto;
+    &__icon {
+      height: 1.81rem;
+    }
   }
   .container {
     width: 8.06rem;
