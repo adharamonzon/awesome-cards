@@ -1,10 +1,10 @@
 @import 'core/settings';
 @import 'core/reset';
-@import "_header";
-@import "layout/card";
-
 
 @import 'layout/landing-page';
+@import '_header';
+@import 'layout/card';
+@import 'layout/designe';
 @import 'layout/footer';
 
 @import 'mediaqueries/landing-page';

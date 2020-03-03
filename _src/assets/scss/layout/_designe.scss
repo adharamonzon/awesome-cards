@@ -1,0 +1,71 @@
+.design {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1.25rem;
+  margin-top: 1.375rem;
+  &__content {
+    font-size: 14px;
+    font-family: $font-secondary;
+    color: #54585a;
+  }
+  &__radio {
+    display: flex;
+    margin-bottom: 1.25rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    &__rectangle {
+      display: flex;
+      margin-left: 0.625rem;
+      &__1 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: $color-dark-green;
+      }
+      &__2 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: $color-blue;
+      }
+      &__3 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: $color-light-green;
+      }
+      &__4 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: #420101;
+      }
+
+      &__5 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: #bd1010;
+      }
+      &__6 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: $color-orange;
+      }
+
+      &__7 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: #3e5b65;
+      }
+      &__8 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: #eab052;
+      }
+
+      &__9 {
+        width: 1.875rem;
+        height: 1.563rem;
+        background-color: #a0c0cf;
+      }
+    }
+  }
+}
