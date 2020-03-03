@@ -1,1 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    margin: 1.25rem 0rem 0.438rem 0rem;
+    font-family: $font-secondary;
+    color: $color-dark-green;
+    font-size: 0.875rem;
+  }
+  &__input {
+    margin: 0rem;
+    border: $color-light-green solid 0.063rem;
+    height: 1.875rem;
+    color: #c5c5c5;
+    font-size: 0.875rem;
+    font-family: $font-secondary;
+  }
+  &__image-fields {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
+.image-fields {
+  &__image-button {
+    font-family: $font-secondary;
+    font-size: 0.875rem;
+    background-color: $color-orange;
+    height: 1.875rem;
+    width: 8.75rem;
+    color: $color-white;
+    border-radius: 0.188rem;
+    border-color: transparent;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    padding: 0.188rem 1.375rem 0.438rem 1.375rem;
+  }
+  &__mini-image {
+    border: $color-light-green solid 0.063rem;
+    height: 1.875rem;
+    width: 1.875rem;
+    margin-left: 1.875rem;
+  }
+}
