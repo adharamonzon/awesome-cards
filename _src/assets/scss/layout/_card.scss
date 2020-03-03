@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 2.375rem;
+  padding-top: 2.37rem;
   padding-bottom: 2.5rem;
 
   &__container__button {
@@ -19,11 +19,11 @@
     font-family: 'Open Sans';
     line-height: 1.25rem;
     font-size: 0.75rem;
-    color: #54585a;
-    width: 4.6875rem;
-    height: 1.875rem;
-    border-radius: 0.9375rem;
-    border: solid 1px #ffffff;
+    color: $color-metal;
+    width: 4.68rem;
+    height: 1.87rem;
+    border-radius: 0.93rem;
+    border: solid 1px $color-white;
     background-color: #bfcdd0;
   }
 
@@ -33,15 +33,15 @@
 }
 
 .card {
-  height: 20.5625rem;
+  height: 20.56rem;
   width: 15rem;
-  background-color: #ffffff;
+  background-color: $color-white;
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 
   &__title {
     font-family: 'Montserrat';
-    padding: 1.3125rem 0 0.625rem 0;
+    padding: 1.31rem 0 0.625rem 0;
 
     &__box {
       border-left: 4px solid #438792;
@@ -49,9 +49,9 @@
     }
 
     &__first {
-      font-size: 1.125rem;
-      line-height: 1.25rem;
-      color: #114e4e;
+      font-size: 1.12rem;
+      line-height: 1.2rem;
+      color: $color-dark-green;
       font-weight: bold;
       padding-bottom: 4px;
       text-transform: capitalize;
@@ -60,19 +60,19 @@
     &__second {
       font-size: 1rem;
       line-height: 1.25rem;
-      color: #54585a;
+      color: $color-metal;
     }
   }
 
   &__menu {
     &__links {
-      font-size: 1.125rem;
-      color: #114e4e;
+      font-size: 1.12rem;
+      color: $color-dark-green;
       text-align: center;
       list-style: none;
       display: flex;
       justify-content: flex-start;
-      margin-left: 0.875rem;
+      margin-left: 0.87rem;
       padding: 0.4375rem 0 0 0;
 
       &__icon {
@@ -80,8 +80,8 @@
         border: solid 2px #a2deaf;
         width: 2rem;
         height: 2rem;
-        padding-top: 0.3125rem;
-        margin: 0px 0.625rem 0 0;
+        padding-top: 0.31rem;
+        margin: 0px 0.62rem 0 0;
       }
     }
   }
