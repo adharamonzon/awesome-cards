@@ -1,12 +1,16 @@
 .design {
   display: flex;
   justify-content: space-between;
-  margin-left: 2.438rem;
-  margin-right: 1.25rem;
+  margin-left: 1.25rem;
   margin-top: 1.375rem;
+  &__content {
+    font-size: 14px;
+    font-family: $font-secondary;
+    color: #54585a;
+  }
   &__radio {
     display: flex;
-    margin: 1.25rem;
+    margin-bottom: 1.25rem;
   }
   &__form {
     display: flex;
