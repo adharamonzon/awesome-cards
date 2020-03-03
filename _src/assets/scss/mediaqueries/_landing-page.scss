@@ -1,5 +1,21 @@
 @media all and (min-width: 768px) {
-  .img-container {
-    background-color: blue;
+  .main-landing {
+    .img-container {
+      width: 26.18rem;
+      padding-bottom: 1.93rem;
+    }
+    &__title {
+      font-size: 1.5rem;
+    }
+    &__subtitle {
+      font-size: 1rem;
+    }
+  }
+  .info {
+    width: 352px;
+    margin: auto;
+  }
+  .container {
+    width: 8.06rem;
   }
 }

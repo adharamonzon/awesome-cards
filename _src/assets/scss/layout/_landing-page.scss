@@ -13,7 +13,7 @@
   }
   &__title {
     font-family: $font-main;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 1.18rem;
     color: $color-orange;
   }
@@ -30,7 +30,8 @@
     border: solid #fde2d3 0.1rem;
     border-radius: 0.25rem;
     border-collapse: 21%;
-    margin-bottom: 2.37rem;
+    margin: auto auto 2.37rem auto;
+    width: 16.75rem;
     &__icon-container {
       opacity: 100%;
       padding: 0.93rem 1.25rem 0.62rem 1.25rem;
@@ -53,12 +54,13 @@
     margin: auto;
     border-radius: 1.31rem;
     background-color: $color-blue;
-    width: 7.5rem;
+    width: 200px;
     height: 2.62rem;
     &__btn {
       text-decoration: none;
       text-transform: uppercase;
       font-family: $font-secondary;
+      font-size: 1rem;
       color: $color-white;
     }
   }
