@@ -1,11 +1,15 @@
 @import "core/settings";
 @import "core/reset";
-@import "_header";
-@import "layout/card";
 
 @import "layout/landing-page";
+@import "_header";
+@import "layout/card";
+@import "layout/designe";
 @import "layout/footer";
-@import "layout/share-section";
+@import "layout/complete-section";
+
+@import "components/title-collapse";
+@import "components/li";
 
 @import "mediaqueries/landing-page";
 @import "mediaqueries/user-interface";
