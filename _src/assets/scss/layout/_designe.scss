@@ -16,57 +16,48 @@
   &__form {
     display: flex;
     flex-direction: column;
-    &__rectangle {
-      display: flex;
-      margin-left: 0.625rem;
-      &__1 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: $color-dark-green;
-      }
-      &__2 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: $color-blue;
-      }
-      &__3 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: $color-light-green;
-      }
-      &__4 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: #420101;
-      }
+  }
+  &__paleta {
+    display: flex;
+    margin-left: 0.625rem;
+    &__1 {
+      @include sizeSquare;
+      background-color: $color-dark-green;
+    }
+    &__2 {
+      @include sizeSquare;
+      background-color: $color-blue;
+    }
+    &__3 {
+      @include sizeSquare;
+      background-color: $color-light-green;
+    }
+    &__4 {
+      @include sizeSquare;
+      background-color: #420101;
+    }
 
-      &__5 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: #bd1010;
-      }
-      &__6 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: $color-orange;
-      }
+    &__5 {
+      @include sizeSquare;
+      background-color: #bd1010;
+    }
+    &__6 {
+      @include sizeSquare;
+      background-color: $color-orange;
+    }
 
-      &__7 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: #3e5b65;
-      }
-      &__8 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: #eab052;
-      }
+    &__7 {
+      @include sizeSquare;
+      background-color: #3e5b65;
+    }
+    &__8 {
+      @include sizeSquare;
+      background-color: #eab052;
+    }
 
-      &__9 {
-        width: 1.875rem;
-        height: 1.563rem;
-        background-color: #a0c0cf;
-      }
+    &__9 {
+      @include sizeSquare;
+      background-color: #a0c0cf;
     }
   }
 }
