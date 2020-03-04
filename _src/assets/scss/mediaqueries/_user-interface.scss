@@ -1,0 +1,20 @@
+@media all and (min-width: 768px) {
+  .container-box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    &__one {
+      width: 43%;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 1.43rem 1.25rem 1.31rem 0;
+    }
+    &__two {
+      width: 52%;
+      margin-left: 1.25rem;
+      margin-right: 1.25rem;
+    }
+  }
+}

@@ -6,5 +6,9 @@
     margin-right: 2.5rem;
     position: relative;
     height: 2.62rem;
+    &__text {
+      align-self: center;
+      padding: 0;
+    }
   }
 }
