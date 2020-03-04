@@ -4,8 +4,7 @@
   padding: 0;
   font-size: 16px;
 }
-
-.box__2 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
+.container-box {
+  background: linear-gradient(to bottom, #f5f5f5, $color-white 9%);
+  border-bottom: #d8d8d8 1px solid;
 }

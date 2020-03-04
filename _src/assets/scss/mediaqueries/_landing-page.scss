@@ -1,0 +1,25 @@
+@media all and (min-width: 768px) {
+  .main-landing {
+    height: 87vh;
+    .img-container {
+      width: 26.18rem;
+      padding-bottom: 1.93rem;
+    }
+    &__title {
+      font-size: 1.5rem;
+    }
+    &__subtitle {
+      font-size: 1rem;
+    }
+  }
+  .info {
+    width: 20.31rem;
+    margin: auto;
+    &__icon {
+      height: 1.81rem;
+    }
+  }
+  .container {
+    width: 8.06rem;
+  }
+}

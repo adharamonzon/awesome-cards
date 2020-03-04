@@ -2,7 +2,8 @@
 @import "core/reset";
 
 @import "layout/landing-page";
-@import "_header";
+
+@import "layout/header";
 @import "layout/card";
 @import "layout/designe";
 @import "layout/footer";
@@ -14,3 +15,4 @@
 
 @import "mediaqueries/landing-page";
 @import "mediaqueries/user-interface";
+@import "mediaqueries/footer";
