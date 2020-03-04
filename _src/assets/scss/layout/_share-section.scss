@@ -1,119 +1,94 @@
-.share--collapsed {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.share {
+  &__uncollapsed {
+    display: flex;
+    flex-direction: column;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__enabled {
+      display: flex;
+      flex-direction: row;
+      background-color: $color-orange;
+      color: $color-white;
+      width: 12.44rem;
+      height: 3.125rem;
+      border-radius: 0.75rem;
+      box-shadow: rgba(0, 0, 0, 0.32);
+      align-items: center;
+    }
+    &__enabled:focus {
+      outline: 0;
+    }
+    &__unabled {
+      display: flex;
+      flex-direction: row;
+      background-color: #d5d5d5;
+      color: $color-white;
+      width: 12.44rem;
+      height: 3.125rem;
+      border-radius: 0.75rem;
+      box-shadow: rgba(0, 0, 0, 0.32);
+      align-items: center;
+    }
+    &__unabled:focus {
+      outline: 0;
+    }
+
+    &__title {
+      padding-left: 0.875rem;
+      text-transform: uppercase;
+      font-family: $font-secondary;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__text {
+      font-size: 1.125rem;
+      font-family: $font-secondary;
+      color: $color-metal;
+      margin-top: 1.25rem;
+      padding-right: 0.5625rem;
+    }
+    &__link {
+      font-size: 0.75rem;
+      color: $color-orange;
+      text-decoration: none;
+      font-family: $font-secondary;
+    }
+    &__twitter {
+      font-size: 0.875rem;
+      font-family: $font-secondary;
+      width: 11.31rem;
+      height: 1.875rem;
+      background-color: #00a0f5;
+      color: $color-white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      margin-top: 0.8125rem;
+      padding-right: 0.5625rem;
+      border-radius: 0.1875rem;
+      box-shadow: rgba(0, 0, 0, 0.32);
+    }
+  }
 }
 
-.share__title {
-  font-size: 1.125rem;
-  color: #54585a;
-  font-family: "Open Sans", sans-serif;
-  padding-left: 0.75rem;
-  text-transform: uppercase;
-}
-.share__icon-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-.share__items {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.fa-share-alt {
-  font-size: 1.125rem;
-  color: $color-orange;
-}
-.fa-chevron-up {
-}
-.share__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.share__btn--enabled {
-  display: flex;
-  flex-direction: row;
-  background-color: $color-orange;
-  color: $color-white;
-  width: 12.44rem;
-  height: 3.125rem;
-  border-radius: 0.75rem;
-  box-shadow: rgba(0, 0, 0, 0.32);
-  align-items: center;
-}
-.share__btn--enabled:focus {
-  outline: 0;
-}
-
-.share__title--white {
-  padding-left: 0.875rem;
-  text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
-}
 .fa-address-card {
   margin-left: 1.063rem;
   font-size: 1.375rem;
   // width: 1.563rem;
   // height: 1.375rem;
 }
-.share--uncollapsed {
-  display: flex;
-  flex-direction: column;
-}
-.share__btn--unabled {
-  display: flex;
-  flex-direction: row;
-  background-color: #d5d5d5;
-  color: $color-white;
-  width: 12.44rem;
-  height: 3.125rem;
-  border-radius: 0.75rem;
-  box-shadow: rgba(0, 0, 0, 0.32);
-  align-items: center;
-}
-.share__btn--unabled:focus {
-  outline: 0;
-}
-.share__card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.share__card-text {
-  font-size: 1.125rem;
-  font-family: "Open Sans", sans-serif;
-  color: #54585a;
-  margin-top: 1.25rem;
-  padding-right: 0.5625rem;
-}
-.share__card-link {
-  font-size: 0.75rem;
-  color: #e17334;
-  text-decoration: none;
-  font-family: "Open Sans", sans-serif;
-}
-.share__card-twitter {
-  font-size: 0.875rem;
-  font-family: "Open Sans", sans-serif;
-  width: 11.31rem;
-  height: 1.875rem;
-  background-color: #00a0f5;
-  color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  margin-top: 0.8125rem;
-  padding-right: 0.5625rem;
-  border-radius: 0.1875rem;
-  box-shadow: rgba(0, 0, 0, 0.32);
-}
+
 .fa-twitter {
   margin-left: 0.625rem;
   width: 1.125rem;

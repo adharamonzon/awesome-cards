@@ -1,55 +1,43 @@
 <!-- Share section hidden -->
-<section class="share share--collapsed">
-  <div class="share__icon-title">
-    <i class="fas fa-share-alt"></i>
-    <h2 class="share__title">Comparte</h2>
-  </div>
-  <div>
-    <i class="fas fa-chevron-down"></i>
-  </div>
-</section>
+<!-- <partial
+  src="_title-collapse.html"
+  img="./assets/images/share-alt-solid.svg"
+  name="Comparte"
+></partial> -->
 <!-- Share section unhidden -->
-<section class="share share--uncollapsed">
-  <div class="share__items">
-    <div class="share__icon-title">
-      <i class="fas fa-share-alt"></i>
-      <h2 class="share__title">Comparte</h2>
-    </div>
-    <div>
-      <i class="fas fa-chevron-up"></i>
-    </div>
-  </div>
+
+<!-- <section class="share share__uncollapsed">
+  <partial
+    src="_title-collapse.html"
+    img="./assets/images/share-alt-solid.svg"
+    name="Comparte"
+  ></partial>
   <div class="share__button">
-    <button class="share__btn--enabled">
+    <button class="share__button__enabled">
       <i class="far fa-address-card"></i>
-      <h2 class="share__title--white">Crear tarjeta</h2>
+      <h2 class="share__button__title">Crear tarjeta</h2>
     </button>
   </div>
-</section>
+</section> -->
 <!-- Share section once the card is created-ready to share -->
-<section class="share share--created">
-  <div class="share__items">
-    <div class="share__icon-title">
-      <i class="fas fa-share-alt"></i>
-      <h2 class="share__title">Comparte</h2>
-    </div>
-    <div>
-      <i class="fas fa-chevron-up"></i>
-    </div>
-  </div>
-  <div class="share__button">
-    <button class="share__btn--unabled">
-      <i class="far fa-address-card"></i>
-      <h2 class="share__title--white">Crear tarjeta</h2>
-    </button>
-  </div>
-  <div class="share__card">
-    <span class="share__card-text">La tarjeta ha sido creada:</span>
-    <a href="#" class="share__card-link"
-      >https://awesome-profile-card.com?id=A456DF0001</a
-    >
-    <a href="#" target="_blank" class="share__card-twitter">
-      <i class="fab fa-twitter"></i>Compartir en twitter
-    </a>
-  </div>
-</section>
+
+<partial
+  src="_title-collapse.html"
+  img="./assets/images/share-alt-solid.svg"
+  name="Comparte"
+></partial>
+<div class="share__button">
+  <button class="share__button__unabled">
+    <i class="far fa-address-card"></i>
+    <h2 class="share__button__title">Crear tarjeta</h2>
+  </button>
+</div>
+<div class="share__card">
+  <span class="share__card__text">La tarjeta ha sido creada:</span>
+  <a href="#" class="share__card__link"
+    >https://awesome-profile-card.com?id=A456DF0001</a
+  >
+  <a href="#" target="_blank" class="share__card__twitter">
+    <i class="fab fa-twitter"></i>Compartir en twitter
+  </a>
+</div>
