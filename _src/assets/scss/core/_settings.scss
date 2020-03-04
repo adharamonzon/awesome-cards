@@ -1,8 +1,11 @@
 // fonts
+
 $font-main: 'Merriweather';
 $font-secondary: 'Open Sans';
 $font-card: 'Montserrat';
+
 // colors
+
 $color-white: #ffff;
 $color-black: #000000;
 $color-dark-green: #114e4e;
@@ -10,3 +13,11 @@ $color-light-green: #a2deaf;
 $color-blue: #438792;
 $color-orange: #e17334;
 $color-metal: #54585a;
+
+//Mixin
+
+//Tamaño cuadrados de la paleta
+@mixin sizeSquare() {
+  width: 1.875rem;
+  height: 1.563rem;
+}
