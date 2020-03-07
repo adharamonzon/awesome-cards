@@ -2,25 +2,23 @@
 
 // Propuesta de Marina
 
-// let formInputName = document.querySelector('.js-form-input-name');
+const formInput = {
+  name: document.querySelector('.js-form-input-name'),
+  job: document.querySelector('.js-form-input-job')
+};
 
-let formInputName = document.querySelector('.js-form-input-name');
-let formInputJob = document.querySelector('.js-form-input-job');
+formInput.name.addEventListener('keyup', form);
+formInput.job.addEventListener('keyup', form);
 
-let cardName = document.querySelector('.js-card-name');
-let cardJob = document.querySelector('.js-card-job');
-
-formInputName.addEventListener('keyup', form);
-formInputJob.addEventListener('keyup', form);
-
-// const card = {
-//   name: ''
-// };
+const card = {
+  name: document.querySelector('.js-card-name'),
+  job: document.querySelector('.js-card-job')
+};
 
 function form(event) {
   if (event.currentTarget.classList.contains('js-form-input-name')) {
-    cardName.innerHTML = formInputName.value;
+    card.name.innerHTML = formInput.name.value;
   } else if (event.currentTarget.classList.contains('js-form-input-job')) {
-    cardJob.innerHTML = formInputJob.value;
+    card.job.innerHTML = formInput.job.value;
   }
 }
