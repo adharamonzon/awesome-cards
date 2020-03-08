@@ -33,17 +33,13 @@
 }
 
 .card {
-  height: 20.56rem;
+  // height: 20.56rem;
   width: 15rem;
   background-color: $color-white;
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 
   &__img {
-<<<<<<< HEAD
-
-=======
->>>>>>> header
     width: 240px;
     height: 200px;
   }
@@ -74,15 +70,22 @@
   }
 
   &__menu {
+
+    &__item {
+      color: $color-dark-green;
+      text-decoration: none;
+    }
+
     &__links {
       font-size: 1.12rem;
-      color: $color-dark-green;
       text-align: center;
       list-style: none;
       display: flex;
       justify-content: flex-start;
       margin-left: 0.87rem;
       padding: 0.4375rem 0 0 0;
+      text-decoration: none;
+      margin-bottom: 10px;
 
       &__icon {
         border-radius: 1rem;

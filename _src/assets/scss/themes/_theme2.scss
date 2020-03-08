@@ -1,33 +1,24 @@
-.card {
+.card--theme2 {
 
-  &__box {
-    &--theme2 {
+  .card {
+    &__title__box {
+
       border-left: 4px solid #bd1010;
     }
-  }
 
-  &__first {
-    &--theme2 {
+
+    &__title__first {
       color: #420101;
     }
 
+    &__menu__item {
+      color: #420101;
 
-  }
-
-  &__menu {
-    &__links {
-      &--theme2 {
-        color: #420101;
-      }
-
-      &__icon {
-        &--theme2 {
-          border: solid 2px #e95626;
-        }
-      }
     }
 
+    &__menu__links__icons {
+      border: solid 2px #e95626;
 
-
+    }
   }
 }
