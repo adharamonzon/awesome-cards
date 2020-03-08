@@ -1,22 +1,23 @@
 <partial src="_title-collapse.html" img="./assets/images/keyboard-regular.svg" name="Rellena"></partial>
-
-<form class="complete__form" action="#" method="post">
-  <label class="complete__form__label" for="name">Nombre completo</label>
-  <input class="complete__form__input" type="text" name="nombre" placeholder="Ej: Sally Jill" />
-  <label class="complete__form__label" for="puesto">Puesto</label>
-  <input class="complete__form__input" type="text" name="puesto" placeholder="Ej: Front-end unicorn" />
-  <label class="complete__form__label" for="image">Imagen de perfil</label>
-  <div class="complete__form__image-fields">
-    <input class="complete__form__image-fields__image-button" type="submit" name="image" value="Añadir imagen" />
-    <!-- Falta el cuadradito de la derecha que muestra la imagen en miniatura, por ahora meto un div -->
-    <div class="complete__form__image-fields__mini-image"></div>
-  </div>
-  <label class="complete__form__label" for="email">Email</label>
-  <input class="complete__form__input" type="email" name="email" placeholder="Ej: sally.hill@gmail.com" />
-  <label class="complete__form__label" for="telephone">Teléfono</label>
-  <input class="complete__form__input" type="tel" name="telephone" placeholder="Ej: 555-55-55-55" />
-  <label class="complete__form__label" for="linkedin">Linkedin</label>
-  <input class="complete__form__input" type="text" name="linkedin" placeholder="Ej: linkedin.com/in/sally-hill" />
-  <label class="complete__form__label" for="github">Github</label>
-  <input class="complete__form__input" type="text" name="github" placeholder="Ej: @sally-hill" />
-</form>
+<div class="js-collapse">
+  <form class="complete__form" action="#" method="post">
+    <label class="complete__form__label" for="name">Nombre completo</label>
+    <input class="complete__form__input js-name" type="text" name="nombre" placeholder="Ej: Sally Jill" />
+    <label class="complete__form__label" for="puesto">Puesto</label>
+    <input class="complete__form__input js-job" type="text" name="puesto" placeholder="Ej: Front-end unicorn" />
+    <label class="complete__form__label" for="image">Imagen de perfil</label>
+    <div class="complete__form__image-fields">
+      <input class="complete__form__image-fields__image-button" type="submit" name="image" value="Añadir imagen" />
+      <!-- Falta el cuadradito de la derecha que muestra la imagen en miniatura, por ahora meto un div -->
+      <div class="complete__form__image-fields__mini-image"></div>
+    </div>
+    <label class="complete__form__label" for="email">Email</label>
+    <input class="complete__form__input js-email" type="email" name="email" placeholder="Ej: sally.hill@gmail.com" />
+    <label class="complete__form__label" for="telephone">Teléfono</label>
+    <input class="complete__form__input js-number" type="tel" name="telephone" placeholder="Ej: 555-55-55-55" />
+    <label class="complete__form__label" for="linkedin">Linkedin</label>
+    <input class="complete__form__input" type="text" name="linkedin" placeholder="Ej: linkedin.com/in/sally-hill" />
+    <label class="complete__form__label" for="github">Github</label>
+    <input class="complete__form__input" type="text" name="github" placeholder="Ej: @sally-hill" />
+  </form>
+</div>

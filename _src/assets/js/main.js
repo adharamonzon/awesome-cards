@@ -1,7 +1,7 @@
 'use strict';
 
+//Desing
 const form = document.querySelector('.design__form');
-form.addEventListener('change', colorChanges);
 
 function colorChanges(ev) {
   const newClass = ev.target.value;
@@ -17,3 +17,37 @@ function colorChanges(ev) {
     }
   }
 }
+
+form.addEventListener('change', colorChanges);
+
+//COLLAPSABLE
+
+function collapse(ev) {
+  const titleSelected = ev.target.parentElement.parentElement.parentElement.querySelector('.js-collapse');
+  const collapsables = document.querySelectorAll('.js-collapse');
+  for (const collapsable of collapsables) {
+    collapsable.classList.add('hidden');
+  }
+  titleSelected.classList.remove('hidden');
+}
+
+//FORM
+
+const personalData = {};
+//Clases añadidas a sección complete
+const firstName = document.querySelector('.js-name');
+const job = document.querySelector('.js-job');
+
+function handlepersonalData(ev) {
+  const name = ev.currentTarget.name;
+  personalData[name] = ev.currentTarget.value;
+  paintPersonalCard();
+}
+
+function paintPersonalCard() {
+  document.querySelector('.card__title__first').innerHTML = `${personalData.nombre || 'Nombre Apellido'} `;
+  document.querySelector('.card__title__second').innerHTML = `${personalData.puesto || 'Front-end developer'} `;
+}
+
+firstName.addEventListener('change', handlepersonalData);
+job.addEventListener('change', handlepersonalData);
