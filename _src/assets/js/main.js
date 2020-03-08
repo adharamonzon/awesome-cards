@@ -2,8 +2,8 @@
 //Data
 const styleCard1 = {
   colorTitle: (document.querySelector('.card__title__first').style.color = '#420101'),
-  colorBorder: (document.querySelector('.card__title__box').style.borderLeft = '#420101'),
-  colorCircles: (document.querySelectorAll('.card__menu__links__icon').style.border = '#e17334'),
+  colorBorder: (document.querySelector('.card__title__box').style.borderLeft = '4px solid #420101'),
+  colorCircles: (document.querySelectorAll('.card__menu__links__icon').style.border = 'solid 2px #e17334'),
   colorLogos: (document.querySelectorAll('.card__menu__links').style.color = '#420101')
 };
 
@@ -41,13 +41,13 @@ function getCardHtmlCode(styleCard) {
 }
 
 function paintCard() {
-  cardsElement.innerHTML = '';
+  cardsElement.style = '';
   const paleta1 = getCardHtmlCode(styleCard1);
-  cardsElement.innerHTML = paleta1;
+  cardsElement.style = paleta1;
   listenDesingRadio();
 }
 
 function listenDesingRadio(ev) {
   const slectPaleta = ev.currentTarget.id;
-  slectPaleta.addEventListener('click', getCardHtmlCode());
+  slectPaleta.addEventListener('click', paintCard());
 }
