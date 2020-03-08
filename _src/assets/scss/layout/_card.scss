@@ -86,3 +86,45 @@
     }
   }
 }
+
+.red {
+  &__title {
+    &__box {
+      border-left: 4px solid #bd1010;
+    }
+
+    &__first {
+      color: #bd1010;
+    }
+  }
+
+  &__menu {
+    &__links {
+      color: #420101;
+      &__icon {
+        border: solid 2px #e17334;
+      }
+    }
+  }
+}
+
+.other {
+  &__title {
+    &__box {
+      border-left: 4px solid #eab052;
+    }
+
+    &__first {
+      color: #eab052;
+    }
+  }
+
+  &__menu {
+    &__links {
+      color: #3e5b65;
+      &__icon {
+        border: solid 2px #a0c0cf;
+      }
+    }
+  }
+}

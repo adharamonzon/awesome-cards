@@ -1,53 +1,19 @@
 'use strict';
-//Data
-const styleCard1 = {
-  colorTitle: (document.querySelector('.card__title__first').style.color = '#420101'),
-  colorBorder: (document.querySelector('.card__title__box').style.borderLeft = '4px solid #420101'),
-  colorCircles: (document.querySelectorAll('.card__menu__links__icon').style.border = 'solid 2px #e17334'),
-  colorLogos: (document.querySelectorAll('.card__menu__links').style.color = '#420101')
-};
 
-const cardsElement = document.querySelector('.js-cards');
+const form = document.querySelector('.design__form');
+form.addEventListener('change', colorChanges);
 
-//Card
-
-function getCardHtmlCode(styleCard) {
-  let htmlCode = '';
-  htmlCode += `<section class='card'>`;
-  htmlCode += `<header class='card__title'>`;
-  htmlCode += `<div class='${styleCard.colorBorder}'>`;
-  htmlCode += `<h2 class='${styleCard.colorTitle}'>Nombre apellido</h2>`;
-  htmlCode += `<h3 class='card__title__second'>Front-end developer</h3>`;
-  htmlCode += `</div>`;
-  htmlCode += `</header>`;
-  htmlCode += `<img class='card__img' src='./assets/images/face-image.jpg' alt='card-image' title='card-image' />`;
-  htmlCode += `<nav class='card__menu'>`;
-  htmlCode += `<ul class='${styleCard.colorLogos}'>`;
-  htmlCode += `<li class='${styleCard.colorCircles}'>`;
-  htmlCode += `<i class='fas fa-mobile-alt'></i></li>`;
-  htmlCode += `<li class='card__menu__links__icon'>
-          <i class='far fa-envelope'></i>
-        </li>`;
-  htmlCode += `<li class='${styleCard.colorCircles}'>
-          <i class='fab fa-linkedin-in'></i>
-        </li>`;
-  htmlCode += `<li class='${colorCircles}'>
-          <i class='fab fa-github-alt'></i>
-        </li>`;
-  htmlCode += `</ul>`;
-  htmlCode += `</nav>`;
-  htmlCode += `</section>`;
-  return htmlCode;
-}
-
-function paintCard() {
-  cardsElement.style = '';
-  const paleta1 = getCardHtmlCode(styleCard1);
-  cardsElement.style = paleta1;
-  listenDesingRadio();
-}
-
-function listenDesingRadio(ev) {
-  const slectPaleta = ev.currentTarget.id;
-  slectPaleta.addEventListener('click', paintCard());
+function colorChanges(ev) {
+  const newClass = ev.target.value;
+  const options = ['__title__box', '__title__first', '__menu__links', '__menu__links__icon'];
+  for (const option of options) {
+    const elements = document.querySelectorAll('.card' + option);
+    for (const element of elements) {
+      element.classList.remove('other' + option);
+      element.classList.remove('red' + option);
+      if (newClass !== 'green') {
+        element.classList.add(newClass + option);
+      }
+    }
+  }
 }
