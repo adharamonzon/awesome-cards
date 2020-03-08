@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use strict';
 
 // debugger
@@ -74,3 +75,5 @@ function paletteThree() {
 
 
 }
+=======
+>>>>>>> header
