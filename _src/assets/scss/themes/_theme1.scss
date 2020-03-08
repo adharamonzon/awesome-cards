@@ -1,0 +1,30 @@
+.card {
+
+  &__box {
+    &--theme1 {
+      border-left: 4px solid #438792;
+    }
+  }
+
+  &__first {
+    &--theme1 {
+      color: $color-dark-green;
+    }
+
+
+  }
+
+  &__menu {
+    &__links {
+      &--theme1 {
+        color: $color-dark-green;
+      }
+
+      &__icon {
+        &--theme1 {
+          border: solid 2px #a2deaf;
+        }
+      }
+    }
+  }
+}

@@ -39,6 +39,12 @@
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 
+  &__img {
+
+    width: 240px;
+    height: 200px;
+  }
+
   &__title {
     font-family: 'Montserrat';
     padding: 1.31rem 0 0.625rem 0;

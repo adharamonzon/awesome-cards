@@ -1,0 +1,33 @@
+.card {
+
+  &__box {
+    &--theme2 {
+      border-left: 4px solid #bd1010;
+    }
+  }
+
+  &__first {
+    &--theme2 {
+      color: #420101;
+    }
+
+
+  }
+
+  &__menu {
+    &__links {
+      &--theme2 {
+        color: #420101;
+      }
+
+      &__icon {
+        &--theme2 {
+          border: solid 2px #e95626;
+        }
+      }
+    }
+
+
+
+  }
+}
