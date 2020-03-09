@@ -1,0 +1,24 @@
+.card--theme3 {
+
+  .card {
+
+    &__title__box {
+      border-left: 4px solid #eab052;
+
+    }
+
+    &__title__first {
+      color: #3e5b65;
+
+    }
+
+    &__menu__item {
+      color: #3e5b65;
+
+    }
+
+    &__menu__links__icon {
+      border: solid 2px #a0c0cf;
+    }
+  }
+}
