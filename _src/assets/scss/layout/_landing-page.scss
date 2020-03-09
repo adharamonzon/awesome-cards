@@ -14,13 +14,13 @@
   }
   &__title {
     font-family: $font-main;
-    font-weight: bolder;
+    font-weight: 900;
     font-size: 1.18rem;
     color: $color-orange;
   }
   &__subtitle {
     font-family: $font-secondary;
-    font-weight: lighter;
+    font-weight: normal;
     font-size: 0.81rem;
     color: $color-dark-green;
     padding-bottom: 1.12rem;
@@ -30,7 +30,6 @@
     justify-content: space-around;
     border: solid #fde2d3 0.1rem;
     border-radius: 0.25rem;
-    border-collapse: 21%;
     margin: auto auto 2.37rem auto;
     width: 16.75rem;
     &__icon-container {
@@ -51,9 +50,8 @@
   }
   .container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
+    align-items: center;
     margin: auto;
     border-radius: 1.31rem;
     background-color: $color-blue;
@@ -63,7 +61,6 @@
       text-decoration: none;
       text-transform: uppercase;
       font-family: $font-secondary;
-      font-size: 1rem;
       color: $color-white;
     }
   }
