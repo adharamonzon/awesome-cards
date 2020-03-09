@@ -44,12 +44,28 @@
         border-color: transparent;
         box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
         padding: 0.188rem 1.375rem 0.438rem 1.375rem;
+
+        &:focus {
+          outline: 1px dotted #000;
+        }
+
+        &-invisible {
+          height: 1.875rem;
+          width: 8.75rem;
+          opacity: 0;
+          position: absolute;
+          cursor: pointer;
+        }
       }
-      &__mini-image {
+      &__mini-image-div {
         border: $color-light-green solid 0.063rem;
         height: 1.875rem;
         width: 1.875rem;
         margin-left: 1.875rem;
+        &-img {
+          height: 1.875rem;
+          width: 1.875rem;
+        }
       }
     }
   }

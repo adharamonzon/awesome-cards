@@ -72,3 +72,25 @@ function paletteThree() {
   card.classList.remove('card--theme2');
   card.classList.remove('card--theme1');
 }
+
+// prueba archivo
+const invisibleInput = document.querySelector('.js-input-invisible');
+const divPicture = document.querySelector('.js-divPicture');
+
+function previewFile() {
+  var preview = document.querySelector('.js-img');
+  var file = document.querySelector('.js-input-invisible').files[0];
+  var reader = new FileReader();
+
+  reader.onloadend = function() {
+    preview.src = reader.result;
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = '';
+  }
+}
+
+invisibleInput.addEventListener('onchange', previewFile);
