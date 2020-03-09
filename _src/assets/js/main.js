@@ -1,7 +1,5 @@
 'use strict';
 
-// Propuesta de Marina
-
 const formInput = {
   name: document.querySelector('.js-form-input-name'),
   job: document.querySelector('.js-form-input-job'),
@@ -33,7 +31,7 @@ function form(event) {
   } else if (event.currentTarget.classList.contains('js-form-input-job')) {
     card.job.innerHTML = event.currentTarget.value;
   } else if (event.currentTarget.classList.contains('js-form-input-email')) {
-    card.email.innerHTML += `<a title='Ir a email de ${formInput.name.value}' href='mailto:${formInput.email.value}'></a>`;
+    card.email.setAttribute('href', formInput.name.value);
   } else if (event.currentTarget.classList.contains('js-form-input-tel')) {
     card.tel.innerHTML += `<a title='Llamar al teléfono de ${formInput.name.value}' href='${formInput.tel.value}'></a>`;
   } else if (event.currentTarget.classList.contains('js-form-input-linkedin')) {
