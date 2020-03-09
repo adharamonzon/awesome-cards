@@ -29,9 +29,9 @@ const card = {
 
 function form(event) {
   if (event.currentTarget.classList.contains('js-form-input-name')) {
-    card.name.innerHTML = formInput.name.value;
+    card.name.innerHTML = event.currentTarget.value;
   } else if (event.currentTarget.classList.contains('js-form-input-job')) {
-    card.job.innerHTML = formInput.job.value;
+    card.job.innerHTML = event.currentTarget.value;
   } else if (event.currentTarget.classList.contains('js-form-input-email')) {
     card.email.innerHTML += `<a title='Ir a email de ${formInput.name.value}' href='mailto:${formInput.email.value}'></a>`;
   } else if (event.currentTarget.classList.contains('js-form-input-tel')) {
