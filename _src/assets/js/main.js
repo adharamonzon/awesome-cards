@@ -72,3 +72,13 @@ function paletteThree() {
   card.classList.remove('card--theme2');
   card.classList.remove('card--theme1');
 }
+
+
+// boton reset
+
+const btnReset = document.querySelector('.js-btn-reset');
+
+function reset() {
+  document.location.reload();
+}
+btnReset.addEventListener('click', reset);
