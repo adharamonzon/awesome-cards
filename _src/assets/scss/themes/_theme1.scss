@@ -1,0 +1,21 @@
+.card--theme1 {
+  .card {
+    &__title__box {
+      border-left: 4px solid #438792;
+    }
+
+    &__title__first {
+      color: $color-dark-green;
+    }
+
+    &__menu__item {
+
+      color: $color-dark-green;
+    }
+
+    &__menu__links__icon {
+
+      border: solid 2px #a2deaf;
+    }
+  }
+}

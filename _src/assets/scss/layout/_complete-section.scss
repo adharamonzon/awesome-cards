@@ -7,6 +7,12 @@
       font-family: $font-secondary;
       color: $color-dark-green;
       font-size: 0.875rem;
+      &.required:after {
+        color: $color-orange;
+        content: ' *';
+        display: inline;
+        font-weight: bold;
+      }
     }
     &__input {
       margin: 0rem;
