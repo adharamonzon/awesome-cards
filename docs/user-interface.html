@@ -31,8 +31,8 @@
                              <h3 class="card__title__second js-card-title-second">Front-end developer</h3> 
                         </div>
                     </header>
-                    <img class="card__img" src="./assets/images/image-rogelia.jpg" alt="card-image"
-                    title="card-image" />
+                    <img class="js-card-img card__img" src="./assets/images/image-rogelia.jpg"
+                    alt="card-image" title="card-image" />
                     <nav class="card__menu js-card-menu">
                         <ul class="card__menu__links js-card-menu-links">
                             <li class="card__menu__links__icon js-card-menu-links-icon"> <a class="card__menu__item js-a-mobile" href="#"><i class="fas fa-mobile-alt"></i></a> 
@@ -49,7 +49,7 @@
             </section>
             <ul class="container-box__two">
                 <li class="collapse">
-                    <div class="title-collapse">
+                    <div class="title-collapse js-title-collapse">
                         <div class="title-collapse__box">
                             <img class="title-collapse__box__icon" src="./assets/images/object-ungroup-regular.svg"
                             alt="Icono" />
@@ -87,7 +87,7 @@
                     </form>
                 </li>
                 <li class="collapse">
-                    <div class="title-collapse">
+                    <div class="title-collapse js-title-collapse">
                         <div class="title-collapse__box">
                             <img class="title-collapse__box__icon" src="./assets/images/keyboard-regular.svg"
                             alt="Icono" />
@@ -103,9 +103,14 @@
                         name="job" placeholder="Ej: La muñeca que todos quieren" />
                         <label class="complete__form__label" for="image">Imagen de perfil</label>
                         <div class="complete__form__image-fields">
-                            <input class="complete__form__image-fields__image-button" type="submit"
-                            name="photo" value="Añadir imagen" />
-                            <div class="complete__form__image-fields__mini-image"></div>
+                            <label for="photo" class="complete__form__image-fields__image-button-label">Añadir imagen</label>
+                            <input class="js-input-invisible complete__form__image-fields__image-button-invisible"
+                            type="file" name="photo" value="Añadir imagen" accept="image/png, image/jpg"
+                            onchange="previewFile()" />
+                            <div class="js-divPicture complete__form__image-fields__mini-image-div">
+                                <img class="js-img complete__form__image-fields__mini-image-div-img" src=""
+                                alt="" />
+                            </div>
                         </div>
                         <label class="complete__form__label required" for="email">Email</label>
                         <input class="complete__form__input js-form-input-email"
@@ -125,38 +130,31 @@
                 </li>
                 <li class="collapse">
                     <!-- Share section hidden -->
-                    <!-- <div class="title-collapse">
-    <div class="title-collapse__box">
-        <img class="title-collapse__box__icon" src="./assets/images/share-alt-solid.svg" alt="Icono" />
-         <h2 class="title-collapse__box__title">Comparte</h2> 
-    </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
-</div>
- -->
-                    <!-- Share section unhidden -->
-                    <!-- <section class="share share__uncollapsed">   
-<div class="title-collapse">
-    <div class="title-collapse__box">
-        <img class="title-collapse__box__icon" src="./assets/images/share-alt-solid.svg" alt="Icono" />
-         <h2 class="title-collapse__box__title">Comparte</h2> 
-    </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
-</div>
-   <div class="share__button">     <button class="share__button__enabled">       <i class="far fa-address-card"></i>       <h2 class="share__button__title">Crear tarjeta</h2>     </button>   </div> </section> -->
+                    <section class="share share__collapsed">
+                        <div class="title-collapse js-title-collapse">
+                            <div class="title-collapse__box">
+                                <img class="title-collapse__box__icon" src="./assets/images/share-alt-solid.svg"
+                                alt="Icono" />
+                                 <h2 class="title-collapse__box__title">comparte</h2> 
+                            </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
+                        </div>
+                        <div class="share__button share__button hidden js-share__button">
+                            <button class="share__button__enabled js-button"> <i class="far fa-address-card"></i> 
+                                 <h2 class="share__button__title">Crear tarjeta</h2> 
+                            </button>
+                            <div class="share__card js-share__card hidden"> <span class="share__card__text">La tarjeta ha sido creada:</span>  <a href="#"
+                                class="share__card__link">https://awesome-profile-card.com?id=A456DF0001</a       >       <a href="#" target="_blank" class="share__card__twitter">         <i class="fab fa-twitter"></i>Compartir en twitter       </a> 
+                            </div>
+                        </div>
+                    </section>
                     <!-- Share section once the card is created-ready to share -->
-                    <div class="title-collapse">
-                        <div class="title-collapse__box">
-                            <img class="title-collapse__box__icon" src="./assets/images/share-alt-solid.svg"
-                            alt="Icono" />
-                             <h2 class="title-collapse__box__title">Comparte</h2> 
-                        </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
-                    </div>
-                    <div class="share__button">
-                        <button class="share__button__unabled"> <i class="far fa-address-card"></i> 
-                             <h2 class="share__button__title">Crear tarjeta</h2> 
-                        </button>
-                    </div>
-                    <div class="share__card"> <span class="share__card__text">La tarjeta ha sido creada:</span>  <a href="#"
-                        class="share__card__link">https://awesome-profile-card.com?id=A456DF0001</a   >   <a href="#" target="_blank" class="share__card__twitter">     <i class="fab fa-twitter"></i>Compartir en twitter   </a> 
-                    </div>
+                    <!-- <div class="title-collapse js-title-collapse">
+    <div class="title-collapse__box">
+        <img class="title-collapse__box__icon" src="./assets/images/share-alt-solid.svg" alt="Icono" />
+         <h2 class="title-collapse__box__title">Comparte</h2> 
+    </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
+</div>
+ <div class="share__button">   <button class="share__button__unabled">     <i class="far fa-address-card"></i>     <h2 class="share__button__title">Crear tarjeta</h2>   </button> </div> <div class="share__card">   <span class="share__card__text">La tarjeta ha sido creada:</span>   <a href="#" class="share__card__link"     >https://awesome-profile-card.com?id=A456DF0001</a   >   <a href="#" target="_blank" class="share__card__twitter">     <i class="fab fa-twitter"></i>Compartir en twitter   </a> </div> -->
                 </li>
             </ul>
         </main>
