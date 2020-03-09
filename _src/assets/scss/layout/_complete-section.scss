@@ -18,9 +18,15 @@
       margin: 0rem;
       border: $color-light-green solid 0.063rem;
       height: 1.875rem;
-      color: #c5c5c5;
+      color: $color-metal;
       font-size: 0.875rem;
       font-family: $font-secondary;
+      &::placeholder {
+        color: #c5c5c5;
+      }
+      &:focus {
+        background-color: #c5c5c5;
+      }
     }
     &__image-fields {
       display: flex;
@@ -28,23 +34,44 @@
     }
     &__image-fields {
       &__image-button {
-        font-family: $font-secondary;
-        font-size: 0.875rem;
-        background-color: $color-orange;
-        height: 1.875rem;
-        width: 8.75rem;
-        color: $color-white;
-        border-radius: 0.188rem;
-        border-color: transparent;
-        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-        padding: 0.188rem 1.375rem 0.438rem 1.375rem;
+        &-invisible {
+          height: 1.875rem;
+          width: 8.75rem;
+          opacity: 0;
+          position: absolute;
+          cursor: pointer;
+        }
+        &-label {
+          font-family: $font-secondary;
+          font-size: 0.875rem;
+          background-color: $color-orange;
+          height: 1.875rem;
+          width: 8.75rem;
+          color: $color-white;
+          border-radius: 0.188rem;
+          border-color: transparent;
+          box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+          padding: 0.188rem 1.375rem 0.438rem 1.375rem;
+
+          &:focus {
+            outline: 1px dotted #000;
+          }
+        }
       }
-      &__mini-image {
+      &__mini-image-div {
         border: $color-light-green solid 0.063rem;
         height: 1.875rem;
         width: 1.875rem;
         margin-left: 1.875rem;
+        &-img {
+          height: 1.875rem;
+          width: 1.875rem;
+        }
       }
     }
   }
+}
+
+.hover {
+  background-color: $color-metal;
 }

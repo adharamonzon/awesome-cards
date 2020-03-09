@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+        rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+        rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <header class="header">
+            <img class="header__img" src="./assets/images/tarjetas-molonas.png" alt="header-image"
+            title="header-image" />
+        </header>
+        <main class="container-box">
+            <section class="principal container-box__one">
+                <div class="principal__container__button">
+                    <button class="principal__button"> <i class="fas fa-trash-alt"></i> Reset</button>
+                </div>
+                <section class="card js-card">
+                    <header class="card__title js-card-title">
+                        <div class="card__title__box js-card-title-box">
+                             <h2 class="card__title__first js-card-title-first">Nombre apellido</h2> 
+                             <h3 class="card__title__second js-card-title-second">Front-end developer</h3> 
+                        </div>
+                    </header>
+                    <img class="js-card-img card__img" src="./assets/images/image-rogelia.jpg"
+                    alt="card-image" title="card-image" />
+                    <nav class="card__menu js-card-menu">
+                        <ul class="card__menu__links js-card-menu-links">
+                            <li class="card__menu__links__icon js-card-menu-links-icon"> <a class="card__menu__item js-a-mobile" href="#"><i class="fas fa-mobile-alt"></i></a> 
+                            </li>
+                            <li class="card__menu__links__icon js-card-menu-links-icon"> <a class="card__menu__item js-a-mail" href="#"><i class="far fa-envelope"></i></a> 
+                            </li>
+                            <li class="card__menu__links__icon js-card-menu-links-icon"> <a class="card__menu__item js-a-linkedin" href="#"><i class="fab fa-linkedin-in"></i></a> 
+                            </li>
+                            <li class="card__menu__links__icon js-card-menu-links-icon"> <a class="card__menu__item js-a-github" href="#"><i class="fab fa-github-alt"></i></a> 
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+            <ul class="container-box__two">
+                <li class="collapse">
+                    <div class="title-collapse js-title-collapse">
+                        <div class="title-collapse__box">
+                            <img class="title-collapse__box__icon" src="./assets/images/object-ungroup-regular.svg"
+                            alt="Icono" />
+                             <h2 class="title-collapse__box__title">Diseña</h2> 
+                        </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
+                    </div>
+                    <div class="design">
+                        <p class="design__content">Colores</p>
+                        <form action="" class="design__form">
+                            <div class="design__radio">
+                                <input type="radio" id="green" name="color" value="green" checked/>
+                                <label for="green" class="design__paleta">
+                                    <div class="design__paleta__1"></div>
+                                    <div class="design__paleta__2"></div>
+                                    <div class="design__paleta__3"></div>
+                                </label>
+                            </div>
+                            <div class="design__radio">
+                                <input type="radio" id="red" name="color" value="red" />
+                                <label for="red" class="design__paleta">
+                                    <div class="design__paleta__4"></div>
+                                    <div class="design__paleta__5"></div>
+                                    <div class="design__paleta__6"></div>
+                                </label>
+                            </div>
+                            <div class="design__radio">
+                                <input type="radio" id="other" name="color" value="other" />
+                                <label for="" class="design__paleta">
+                                    <div class="design__paleta__7"></div>
+                                    <div class="design__paleta__8"></div>
+                                    <div class="design__paleta__9"></div>
+                                </label>
+                            </div>
+                    </div>
+                    </form>
+                </li>
+                <li class="collapse">
+                    <div class="title-collapse js-title-collapse">
+                        <div class="title-collapse__box">
+                            <img class="title-collapse__box__icon" src="./assets/images/keyboard-regular.svg"
+                            alt="Icono" />
+                             <h2 class="title-collapse__box__title">Rellena</h2> 
+                        </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
+                    </div>
+                    <form class="complete__form" action="#" method="post">
+                        <label class="complete__form__label required" for="name">Nombre completo</label>
+                        <input class="js-form-input-name complete__form__input"
+                        type="text" name="name" placeholder="Ej: Doña Rogelia" required />
+                        <label class="complete__form__label" for="puesto">Puesto</label>
+                        <input class="js-form-input-job complete__form__input" type="text"
+                        name="job" placeholder="Ej: La muñeca que todos quieren" />
+                        <label class="complete__form__label" for="image">Imagen de perfil</label>
+                        <div class="complete__form__image-fields">
+                            <label for="photo" class="complete__form__image-fields__image-button-label">Añadir imagen</label>
+                            <input class="js-input-invisible complete__form__image-fields__image-button-invisible"
+                            type="file" name="photo" value="Añadir imagen" accept="image/png, image/jpg"
+                            onchange="previewFile()" />
+                            <div class="js-divPicture complete__form__image-fields__mini-image-div">
+                                <img class="js-img complete__form__image-fields__mini-image-div-img" src=""
+                                alt="" />
+                            </div>
+                        </div>
+                        <label class="complete__form__label required" for="email">Email</label>
+                        <input class="complete__form__input js-form-input-email"
+                        type="email" name="email" placeholder="Ej: la_rogelia@gmail.com" required
+                        />
+                        <label class="complete__form__label required" for="telephone">Teléfono</label>
+                        <input class="complete__form__input js-form-input-tel"
+                        type="tel" name="phone" placeholder="Ej: 926 61 30 84" required />
+                        <label class="complete__form__label" for="linkedin">Linkedin</label>
+                        <input class="complete__form__input js-form-input-linkedin"
+                        type="text" name="linkedin" placeholder="Ej: linkedin.com/in/rogelia-doña"
+                        />
+                        <label class="complete__form__label" for="github">Github</label>
+                        <input class="complete__form__input js-form-input-github"
+                        type="text" name="github" placeholder="Ej: @doña-roG" />
+                    </form>
+                </li>
+                <li class="collapse">
+                    <!-- Share section hidden -->
+                    <section class="share share__collapsed">
+                        <div class="title-collapse js-title-collapse">
+                            <div class="title-collapse__box">
+                                <img class="title-collapse__box__icon" src="./assets/images/share-alt-solid.svg"
+                                alt="Icono" />
+                                 <h2 class="title-collapse__box__title">comparte</h2> 
+                            </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
+                        </div>
+                        <div class="share__button share__button hidden js-share__button">
+                            <button class="share__button__enabled js-button"> <i class="far fa-address-card"></i> 
+                                 <h2 class="share__button__title">Crear tarjeta</h2> 
+                            </button>
+                            <div class="share__card js-share__card hidden"> <span class="share__card__text">La tarjeta ha sido creada:</span>  <a href="#"
+                                class="share__card__link">https://awesome-profile-card.com?id=A456DF0001</a       >       <a href="#" target="_blank" class="share__card__twitter">         <i class="fab fa-twitter"></i>Compartir en twitter       </a> 
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Share section once the card is created-ready to share -->
+                    <!-- <div class="title-collapse js-title-collapse">
+    <div class="title-collapse__box">
+        <img class="title-collapse__box__icon" src="./assets/images/share-alt-solid.svg" alt="Icono" />
+         <h2 class="title-collapse__box__title">Comparte</h2> 
+    </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
+</div>
+ <div class="share__button">   <button class="share__button__unabled">     <i class="far fa-address-card"></i>     <h2 class="share__button__title">Crear tarjeta</h2>   </button> </div> <div class="share__card">   <span class="share__card__text">La tarjeta ha sido creada:</span>   <a href="#" class="share__card__link"     >https://awesome-profile-card.com?id=A456DF0001</a   >   <a href="#" target="_blank" class="share__card__twitter">     <i class="fab fa-twitter"></i>Compartir en twitter   </a> </div> -->
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <div class="footer">
+                <p class="footer__text">Awesome profile-cards @2020</p>
+                <img class="footer__logo" src="./assets/images/logo-adalab.png"
+                title="Logo Adalab" alt="Logo de Adalab" />
+            </div>
+        </footer>
+        <script type="text/javascript" src="./assets/js/main.js"></script>
+    </body>
+
+</html>

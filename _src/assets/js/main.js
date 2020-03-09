@@ -1,4 +1,5 @@
 'use strict';
+
 // JS del formulario
 
 const formObject = {
@@ -23,7 +24,8 @@ const cardObject = {
   tel: document.querySelector('.js-a-mobile'),
   email: document.querySelector('.js-a-mail'),
   linkedin: document.querySelector('.js-a-linkedin'),
-  github: document.querySelector('.js-a-github')
+  github: document.querySelector('.js-a-github'),
+  image: document.querySelector('.js-card-img')
 };
 
 function form(event) {
@@ -32,7 +34,7 @@ function form(event) {
   } else if (event.currentTarget.classList.contains('js-form-input-job')) {
     cardObject.job.innerHTML = event.currentTarget.value;
   } else if (event.currentTarget.classList.contains('js-form-input-email')) {
-    cardObject.email.setAttribute('href', formObject.email.value);
+    cardObject.email.setAttribute('href', `mailto: ${formObject.email.value}`);
   } else if (event.currentTarget.classList.contains('js-form-input-tel')) {
     cardObject.tel.setAttribute('href', formObject.tel.value);
   } else if (event.currentTarget.classList.contains('js-form-input-linkedin')) {
@@ -82,3 +84,42 @@ function reset() {
   document.location.reload();
 }
 btnReset.addEventListener('click', reset);
+// Share section Javascript
+
+const shareButtonDiv = document.querySelector('.js-share__button');
+const button = document.querySelector('.js-button');
+const divList = document.querySelectorAll('.js-title-collapse');
+const myCard = document.querySelector('.js-share__card');
+
+function unCollapse() {
+  shareButtonDiv.classList.toggle('hidden');
+}
+
+// prueba archivo
+const invisibleInput = document.querySelector('.js-input-invisible');
+const divPicture = document.querySelector('.js-divPicture');
+
+function previewFile() {
+  var preview = document.querySelector('.js-img');
+  var file = document.querySelector('.js-input-invisible').files[0];
+  var reader = new FileReader();
+
+  reader.onloadend = function () {
+    preview.src = reader.result;
+    cardObject.image.src = preview.src;
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = '';
+  }
+}
+
+function toggleBtnStyle() {
+  const label = document.querySelector('.complete__form__image-fields__image-button-label');
+  label.classList.toggle('hover');
+}
+invisibleInput.addEventListener('onchange', previewFile);
+invisibleInput.addEventListener('mouseover', toggleBtnStyle);
+invisibleInput.addEventListener('mouseout', toggleBtnStyle);
