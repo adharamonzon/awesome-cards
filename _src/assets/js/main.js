@@ -4,6 +4,7 @@
 const form = document.querySelector('.design__form');
 
 function colorChanges(ev) {
+  debugger;
   const newClass = ev.target.value;
   const options = ['__title__box', '__title__first', '__menu__links', '__menu__links__icon'];
   for (const option of options) {
@@ -23,9 +24,11 @@ form.addEventListener('change', colorChanges);
 //COLLAPSABLE
 
 function collapse(ev) {
+  debugger;
   const titleSelected = ev.target.parentElement.parentElement.parentElement.querySelector('.js-collapse');
   const collapsables = document.querySelectorAll('.js-collapse');
   for (const collapsable of collapsables) {
+    collapsable.classList.remove('hidden');
     collapsable.classList.add('hidden');
   }
   titleSelected.classList.remove('hidden');
