@@ -18,9 +18,15 @@
       margin: 0rem;
       border: $color-light-green solid 0.063rem;
       height: 1.875rem;
-      color: #c5c5c5;
+      color: $color-metal;
       font-size: 0.875rem;
       font-family: $font-secondary;
+      &::placeholder {
+        color: #c5c5c5;
+      }
+      &:focus {
+        background-color: #c5c5c5;
+      }
     }
     &__image-fields {
       display: flex;

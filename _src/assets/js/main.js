@@ -32,7 +32,7 @@ function form(event) {
   } else if (event.currentTarget.classList.contains('js-form-input-job')) {
     cardObject.job.innerHTML = event.currentTarget.value;
   } else if (event.currentTarget.classList.contains('js-form-input-email')) {
-    cardObject.email.setAttribute('href', formObject.email.value);
+    cardObject.email.setAttribute('href', `mailto: ${formObject.email.value}`);
   } else if (event.currentTarget.classList.contains('js-form-input-tel')) {
     cardObject.tel.setAttribute('href', formObject.tel.value);
   } else if (event.currentTarget.classList.contains('js-form-input-linkedin')) {
