@@ -23,7 +23,8 @@ const cardObject = {
   tel: document.querySelector('.js-a-mobile'),
   email: document.querySelector('.js-a-mail'),
   linkedin: document.querySelector('.js-a-linkedin'),
-  github: document.querySelector('.js-a-github')
+  github: document.querySelector('.js-a-github'),
+  image: document.querySelector('.js-card-img')
 };
 
 function form(event) {
@@ -84,6 +85,7 @@ function previewFile() {
 
   reader.onloadend = function() {
     preview.src = reader.result;
+    cardObject.image.src = preview.src;
   };
 
   if (file) {
