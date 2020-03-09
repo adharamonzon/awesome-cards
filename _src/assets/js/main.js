@@ -95,4 +95,10 @@ function previewFile() {
   }
 }
 
+function toggleBtnStyle() {
+  const label = document.querySelector('.complete__form__image-fields__image-button-label');
+  label.classList.toggle('hover');
+}
 invisibleInput.addEventListener('onchange', previewFile);
+invisibleInput.addEventListener('mouseover', toggleBtnStyle);
+invisibleInput.addEventListener('mouseout', toggleBtnStyle);
