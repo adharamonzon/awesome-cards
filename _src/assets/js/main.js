@@ -2,10 +2,10 @@
 
 console.log(">> Ready :)");
 
-const shareButtonDiv = document.querySelector(".share__button");
-const button = shareButtonDiv.querySelector("button");
-const divList = document.querySelectorAll(".title-collapse");
-const myCard = document.querySelector(".share__card");
+const shareButtonDiv = document.querySelector(".js-share__button");
+const button = document.querySelector(".js-button");
+const divList = document.querySelectorAll(".js-title-collapse");
+const myCard = document.querySelector(".js-share__card");
 
 function unCollapse() {
   shareButtonDiv.classList.toggle("hidden");
