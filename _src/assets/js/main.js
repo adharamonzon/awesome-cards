@@ -75,6 +75,15 @@ function paletteThree() {
   card.classList.remove('card--theme1');
 }
 
+
+// boton reset
+
+const btnReset = document.querySelector('.js-btn-reset');
+
+function reset() {
+  document.location.reload();
+}
+btnReset.addEventListener('click', reset);
 // Share section Javascript
 
 const shareButtonDiv = document.querySelector('.js-share__button');
@@ -85,6 +94,17 @@ const myCard = document.querySelector('.js-share__card');
 function unCollapse() {
   shareButtonDiv.classList.toggle('hidden');
 }
+divList[2].addEventListener('click', unCollapse);
+
+/////////////////
+
+function createCard() {
+  button.classList.remove('share__button__enabled');
+  button.classList.add('share__button__unabled');
+  myCard.classList.remove('hidden');
+}
+
+button.addEventListener('click', createCard);
 
 // prueba archivo
 const invisibleInput = document.querySelector('.js-input-invisible');
@@ -95,7 +115,7 @@ function previewFile() {
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function() {
+  reader.onloadend = function () {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };

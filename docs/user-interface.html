@@ -22,7 +22,7 @@
         <main class="container-box">
             <section class="principal container-box__one">
                 <div class="principal__container__button">
-                    <button class="principal__button"> <i class="fas fa-trash-alt"></i> Reset</button>
+                    <button class="principal__button js-btn-reset" type="reset"> <i class="fas fa-trash-alt"></i> Reset</button>
                 </div>
                 <section class="card js-card">
                     <header class="card__title js-card-title">
@@ -94,7 +94,7 @@
                              <h2 class="title-collapse__box__title">Rellena</h2> 
                         </div> <i class="fas fa-chevron-down title-collapse__arrow"></i> 
                     </div>
-                    <form class="complete__form" action="#" method="post">
+                    <form class="complete__form" action="#" method="post" id="myForm">
                         <label class="complete__form__label required" for="name">Nombre completo</label>
                         <input class="js-form-input-name complete__form__input"
                         type="text" name="name" placeholder="Ej: Doña Rogelia" required />
