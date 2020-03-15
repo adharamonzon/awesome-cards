@@ -24,7 +24,6 @@ form.addEventListener('change', colorChanges);
 //COLLAPSABLE
 
 function collapse(ev) {
-  debugger;
   const titleSelected = ev.target.parentElement.parentElement.parentElement.querySelector('.js-collapse');
   const collapsables = document.querySelectorAll('.js-collapse');
   for (const collapsable of collapsables) {
