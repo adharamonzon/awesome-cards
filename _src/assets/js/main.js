@@ -10,7 +10,6 @@ const formObject = {
   tel: document.querySelector('.js-form-input-tel'),
   linkedin: document.querySelector('.js-form-input-linkedin'),
   github: document.querySelector('.js-form-input-github'),
-  colour: document.querySelector('.design__form')
 };
 
 formComplete.addEventListener('keyup', ensureData);
@@ -56,12 +55,19 @@ function getLocalStorage() {
 function ensureData() {
   cardObject.name.innerHTML = formObject.name.value || 'Nombre Apellido';
   cardObject.job.innerHTML = formObject.job.value || 'Puesto de trabajo';
-  cardObject.tel.setAttribute('href', formObject.value);
-  cardObject.email.setAttribute('href', formObject.value);
-  cardObject.linkedin.setAttribute('href', formObject.value);
-  cardObject.github.setAttribute('href', formObject.value);
+  document.querySelector('.js-a-mobile').href = 'tel:' + formObject.tel.value;
+  document.querySelector('.js-a-mail').href = 'mailto:' + formObject.email.value;
+  document.querySelector('.js-a-linkedin').href = formObject.linkedin.value;
+  document.querySelector('.js-a-github').href = formObject.github.value;
+
+  //NO FUNCIONAN LOS ENLACES CON ESTA FORMA
+  // cardObject.tel.setAttribute('href', formObject.value);
+  // cardObject.email.setAttribute('href', formObject.value);
+  // cardObject.linkedin.setAttribute('href', formObject.value);
+  // cardObject.github.setAttribute('href', formObject.value);
   setLocalStorage();
 }
+
 
 getLocalStorage();
 
