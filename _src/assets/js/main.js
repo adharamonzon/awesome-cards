@@ -1,47 +1,37 @@
 'use strict';
 
-// JS del formulario
+//Campos del formulario
+const formOptions = ['name', 'job', 'email', 'phone', 'linkedin', 'github'];
 
-const formObject = {
-  name: document.querySelector('.js-form-input-name'),
-  job: document.querySelector('.js-form-input-job'),
-  email: document.querySelector('.js-form-input-email'),
-  tel: document.querySelector('.js-form-input-tel'),
-  linkedin: document.querySelector('.js-form-input-linkedin'),
-  github: document.querySelector('.js-form-input-github')
+//Model Object
+let modelObject = {
+  name: '',
+  job: '',
+  phone: '',
+  email: '',
+  linkedin: '',
+  github: '',
+  image: ''
 };
 
-formObject.name.addEventListener('keyup', form);
-formObject.job.addEventListener('keyup', form);
-formObject.email.addEventListener('keyup', form);
-formObject.tel.addEventListener('keyup', form);
-formObject.linkedin.addEventListener('keyup', form);
-formObject.github.addEventListener('keyup', form);
+//Se cargan al objeto los datos del LocalStorage (si existen)
+if (localStorage.getItem('form')) {
+  setDataFromLocalStorage();
+}
 
-const cardObject = {
-  name: document.querySelector('.js-card-title-first'),
-  job: document.querySelector('.js-card-title-second'),
-  tel: document.querySelector('.js-a-mobile'),
-  email: document.querySelector('.js-a-mail'),
-  linkedin: document.querySelector('.js-a-linkedin'),
-  github: document.querySelector('.js-a-github'),
-  image: document.querySelector('.js-card-img')
-};
+//Se escuchan un evento para cada campo del formulario
+for (const option of formOptions) {
+  document.querySelector('.js-form-input-' + option).addEventListener('keyup', saveDataToLocalStorage);
+}©
 
-function form(event) {
-  if (event.currentTarget.classList.contains('js-form-input-name')) {
-    cardObject.name.innerHTML = event.currentTarget.value;
-  } else if (event.currentTarget.classList.contains('js-form-input-job')) {
-    cardObject.job.innerHTML = event.currentTarget.value;
-  } else if (event.currentTarget.classList.contains('js-form-input-email')) {
-    cardObject.email.setAttribute('href', `mailto: ${formObject.email.value}`);
-  } else if (event.currentTarget.classList.contains('js-form-input-tel')) {
-    cardObject.tel.setAttribute('href', formObject.tel.value);
-  } else if (event.currentTarget.classList.contains('js-form-input-linkedin')) {
-    cardObject.linkedin.setAttribute('href', formObject.linkedin.value);
-  } else if (event.currentTarget.classList.contains('js-form-input-github')) {
-    cardObject.github.setAttribute('href', formObject.github.value);
+function saveDataToLocalStorage(event) {
+  if (event.target.name === 'image') {
+    modelObject[event.target.name].src = event.target.src;
+  } else {
+    modelObject[event.target.name] = event.currentTarget.value;
   }
+  setDataToForm();
+  localStorage.setItem('form', JSON.stringify(modelObject));
 }
 
 // cambiar los colores
@@ -75,7 +65,6 @@ function paletteThree() {
   card.classList.remove('card--theme1');
 }
 
-
 // boton reset
 
 const btnReset = document.querySelector('.js-btn-reset');
@@ -108,16 +97,15 @@ button.addEventListener('click', createCard);
 
 // prueba archivo
 const invisibleInput = document.querySelector('.js-input-invisible');
-const divPicture = document.querySelector('.js-divPicture');
 
 function previewFile() {
   var preview = document.querySelector('.js-img');
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function () {
+  reader.onloadend = function() {
     preview.src = reader.result;
-    cardObject.image.src = preview.src;
+    modelObject.image = preview.src;
   };
 
   if (file) {
@@ -134,3 +122,25 @@ function toggleBtnStyle() {
 invisibleInput.addEventListener('onchange', previewFile);
 invisibleInput.addEventListener('mouseover', toggleBtnStyle);
 invisibleInput.addEventListener('mouseout', toggleBtnStyle);
+
+function setDataFromLocalStorage() {
+  modelObject = JSON.parse(localStorage.getItem('form'));
+  setDataToCard();
+  setDataToForm();
+}
+
+function setDataToCard() {
+  for (const option of formOptions) {
+    document.querySelector('.js-form-input-' + option).value = modelObject[option];
+  }
+}
+
+function setDataToForm() {
+  document.querySelector('.js-card-title-first').innerHTML = modelObject['name'];
+  document.querySelector('.js-card-title-second').innerHTML = modelObject['job'];
+  document.querySelector('.js-card-img').innerHTML = modelObject['img'];
+  document.querySelector('.js-a-mobile').href = modelObject['phone'];
+  document.querySelector('.js-a-mail').href = modelObject['mail'];
+  document.querySelector('.js-a-linkedin').href = modelObject['linkedin'];
+  document.querySelector('.js-a-github').href = modelObject['github'];
+}
