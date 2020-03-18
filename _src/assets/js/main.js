@@ -42,7 +42,7 @@ function setLocalStorage() {
 function getLocalStorage() {
   const data = JSON.parse(localStorage.getItem('data'));
   if (data !== null) {
-    for (const input of formObject) {
+    for (const input in formObject) {
       formObject[input].value = data[input];
     }
   }
@@ -100,7 +100,7 @@ function paletteThree() {
 const btnReset = document.querySelector('.js-btn-reset');
 
 function reset() {
-  for (const input of formObject) {
+  for (const input in formObject) {
     formObject[input].value = '';
   }
   ensureData();
