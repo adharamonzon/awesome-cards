@@ -75,7 +75,6 @@ function paletteThree() {
   card.classList.remove('card--theme1');
 }
 
-
 // boton reset
 
 const btnReset = document.querySelector('.js-btn-reset');
@@ -108,6 +107,7 @@ button.addEventListener('click', createCard);
 
 // prueba archivo
 const invisibleInput = document.querySelector('.js-input-invisible');
+// eslint-disable-next-line no-unused-vars
 const divPicture = document.querySelector('.js-divPicture');
 
 function previewFile() {
@@ -115,7 +115,7 @@ function previewFile() {
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function () {
+  reader.onloadend = function() {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };
