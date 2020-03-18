@@ -42,7 +42,17 @@ function form(event) {
   } else if (event.currentTarget.classList.contains('js-form-input-github')) {
     cardObject.github.setAttribute('href', formObject.github.value);
   }
+//local storage: 
+/*   for (const i in formObject) {
+    localStorage.setItem('formObject', JSON.stringify(formObject.[i].value));
+  }
+  console.log(cardObject);
+
+  localStorage.setItem('formObject', JSON.stringify(formObject.name.value));
 }
+
+const saveFormObject = JSON.parse(localStorage.getItem('formObject'));
+console.log(saveFormObject); */
 
 // cambiar los colores
 
@@ -74,7 +84,6 @@ function paletteThree() {
   card.classList.remove('card--theme2');
   card.classList.remove('card--theme1');
 }
-
 
 // boton reset
 
@@ -108,14 +117,14 @@ button.addEventListener('click', createCard);
 
 // prueba archivo
 const invisibleInput = document.querySelector('.js-input-invisible');
-const divPicture = document.querySelector('.js-divPicture');
-
+/* const divPicture = document.querySelector('.js-divPicture');
+ */
 function previewFile() {
   var preview = document.querySelector('.js-img');
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function () {
+  reader.onloadend = function() {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };
