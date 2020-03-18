@@ -19,18 +19,26 @@ if (localStorage.getItem('form')) {
   setDataFromLocalStorage();
 }
 
-//Se escuchan un evento para cada campo del formulario
+//Se escucha un evento para cada campo del formulario
 for (const option of formOptions) {
-  document.querySelector('.js-form-input-' + option).addEventListener('keyup', saveDataToLocalStorage);
-}©
-
-function saveDataToLocalStorage(event) {
-  if (event.target.name === 'image') {
-    modelObject[event.target.name].src = event.target.src;
+  if (option === 'image') {
+    document.querySelector('.js-form-input-' + option).addEventListener('change', saveDataFromForm);
   } else {
-    modelObject[event.target.name] = event.currentTarget.value;
+    document.querySelector('.js-form-input-' + option).addEventListener('keyup', saveDataFromForm);
   }
-  setDataToForm();
+}
+
+function saveDataFromForm(event) {
+  const fieldName = event.target.name;
+
+  if (fieldName === 'image') {
+    console.log('CAMBIO');
+
+    modelObject[fieldName] = event.target.src;
+  } else {
+    modelObject[fieldName] = event.currentTarget.value;
+  }
+  setDataToCard();
   localStorage.setItem('form', JSON.stringify(modelObject));
 }
 
@@ -103,7 +111,7 @@ function previewFile() {
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function() {
+  reader.onloadend = function () {
     preview.src = reader.result;
     modelObject.image = preview.src;
   };
@@ -122,25 +130,25 @@ function toggleBtnStyle() {
 invisibleInput.addEventListener('onchange', previewFile);
 invisibleInput.addEventListener('mouseover', toggleBtnStyle);
 invisibleInput.addEventListener('mouseout', toggleBtnStyle);
-
+//---------------------------------------------------------------------------
 function setDataFromLocalStorage() {
   modelObject = JSON.parse(localStorage.getItem('form'));
   setDataToCard();
   setDataToForm();
 }
 
-function setDataToCard() {
+function setDataToForm() {
   for (const option of formOptions) {
     document.querySelector('.js-form-input-' + option).value = modelObject[option];
   }
 }
 
-function setDataToForm() {
-  document.querySelector('.js-card-title-first').innerHTML = modelObject['name'];
-  document.querySelector('.js-card-title-second').innerHTML = modelObject['job'];
-  document.querySelector('.js-card-img').innerHTML = modelObject['img'];
-  document.querySelector('.js-a-mobile').href = modelObject['phone'];
-  document.querySelector('.js-a-mail').href = modelObject['mail'];
-  document.querySelector('.js-a-linkedin').href = modelObject['linkedin'];
-  document.querySelector('.js-a-github').href = modelObject['github'];
+function setDataToCard() {
+  document.querySelector('.js-card-title-first').innerHTML = modelObject.name || 'Nombre Apellido';
+  document.querySelector('.js-card-title-second').innerHTML = modelObject.job || 'Trabajo';
+  document.querySelector('.js-card-img').innerHTML = modelObject.img;
+  document.querySelector('.js-a-mobile').href = 'tel:' + modelObject.phone;
+  document.querySelector('.js-a-mail').href = 'mailto:' + modelObject.email;
+  document.querySelector('.js-a-linkedin').href = modelObject.linkedin;
+  document.querySelector('.js-a-github').href = modelObject.github;
 }
