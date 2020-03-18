@@ -28,8 +28,6 @@ const cardObject = {
   image: document.querySelector('.js-card-img')
 };
 
-
-
 function setLocalStorage() {
   const data = {};
   for (const input in formObject) {
@@ -50,8 +48,8 @@ function getLocalStorage() {
 }
 
 function ensureData() {
-  cardObject.name.innerHTML = formObject.name.value;
-  cardObject.job.innerHTML = formObject.job.value;
+  cardObject.name.innerHTML = formObject.name.value || 'Nombre Apellido';
+  cardObject.job.innerHTML = formObject.job.value || 'Puesto de trabajo';
   cardObject.tel.setAttribute('href', formObject.value);
   cardObject.email.setAttribute('href', formObject.value);
   cardObject.linkedin.setAttribute('href', formObject.value);
@@ -74,7 +72,7 @@ function paletteOne() {
   card.classList.add('card--theme1');
   card.classList.remove('card--theme2');
   card.classList.remove('card--theme3');
-  setLocalStorage();
+  ensureData();
 }
 
 themeTwo.addEventListener('change', paletteTwo);
@@ -83,7 +81,7 @@ function paletteTwo() {
   card.classList.add('card--theme2');
   card.classList.remove('card--theme3');
   card.classList.remove('card--theme1');
-  setLocalStorage();
+  ensureData();
 }
 
 themeThree.addEventListener('change', paletteThree);
@@ -92,7 +90,7 @@ function paletteThree() {
   card.classList.add('card--theme3');
   card.classList.remove('card--theme2');
   card.classList.remove('card--theme1');
-  setLocalStorage();
+  ensureData();
 }
 
 // boton reset
@@ -137,7 +135,7 @@ function previewFile() {
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function () {
+  reader.onloadend = function() {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };
