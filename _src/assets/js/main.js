@@ -1,5 +1,14 @@
 'use strict';
+//JS colapsables:
 
+const colapsableArrow = document.querySelectorAll('.title-collapse__arrow');
+
+function updateColapseSection() {
+  console.log('yai');
+}
+for (const arrow of colapsableArrow) {
+  arrow.addEventListener('click', updateColapseSection);
+}
 // JS del formulario
 
 const formObject = {
@@ -75,7 +84,6 @@ function paletteThree() {
   card.classList.remove('card--theme1');
 }
 
-
 // boton reset
 
 const btnReset = document.querySelector('.js-btn-reset');
@@ -108,14 +116,14 @@ button.addEventListener('click', createCard);
 
 // prueba archivo
 const invisibleInput = document.querySelector('.js-input-invisible');
-const divPicture = document.querySelector('.js-divPicture');
-
+/* const divPicture = document.querySelector('.js-divPicture');
+ */
 function previewFile() {
   var preview = document.querySelector('.js-img');
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function () {
+  reader.onloadend = function() {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };

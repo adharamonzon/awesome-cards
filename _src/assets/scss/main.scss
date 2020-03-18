@@ -1,20 +1,22 @@
-@import "core/settings";
-@import "core/reset";
+@import 'core/settings';
+@import 'core/reset';
 
-@import "layout/landing-page";
+@import 'layout/landing-page';
 
-@import "layout/header";
-@import "layout/card";
-@import "layout/designe";
-@import "layout/footer";
-@import "layout/complete-section";
-@import "layout/share-section";
+@import 'layout/header';
+@import 'layout/card';
+@import 'components/sections-colapse';
+@import 'layout/designe';
+@import 'layout/footer';
+@import 'layout/complete-section';
+@import 'layout/share-section';
 
-@import "components/title-collapse";
-@import "components/li";
-@import "themes/_theme1";
-@import "themes/_theme2";
-@import "themes/_theme3";
-@import "mediaqueries/landing-page";
-@import "mediaqueries/user-interface";
-@import "mediaqueries/footer";
+@import 'components/title-collapse';
+@import 'components/sections-colapse';
+@import 'components/li';
+@import 'themes/_theme1';
+@import 'themes/_theme2';
+@import 'themes/_theme3';
+@import 'mediaqueries/landing-page';
+@import 'mediaqueries/user-interface';
+@import 'mediaqueries/footer';
