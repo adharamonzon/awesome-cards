@@ -1,6 +1,7 @@
 'use strict';
 
 // JS del formulario
+const formComplete = document.querySelector('.complete__form');
 
 const formObject = {
   name: document.querySelector('.js-form-input-name'),
@@ -8,15 +9,20 @@ const formObject = {
   email: document.querySelector('.js-form-input-email'),
   tel: document.querySelector('.js-form-input-tel'),
   linkedin: document.querySelector('.js-form-input-linkedin'),
-  github: document.querySelector('.js-form-input-github')
+  github: document.querySelector('.js-form-input-github'),
+  colour: document.querySelector('.design__form')
 };
 
-formObject.name.addEventListener('keyup', ensureData);
-formObject.job.addEventListener('keyup', ensureData);
-formObject.email.addEventListener('keyup', ensureData);
-formObject.tel.addEventListener('keyup', ensureData);
-formObject.linkedin.addEventListener('keyup', ensureData);
-formObject.github.addEventListener('keyup', ensureData);
+formComplete.addEventListener('keyup', ensureData);
+
+//ESTO NO HACE FALTA SI HACEMOS EL LISTENER A TODO EL FORMULARIO.
+
+// formObject.name.addEventListener('keyup', ensureData);
+// formObject.job.addEventListener('keyup', ensureData);
+// formObject.email.addEventListener('keyup', ensureData);
+// formObject.tel.addEventListener('keyup', ensureData);
+// formObject.linkedin.addEventListener('keyup', ensureData);
+// formObject.github.addEventListener('keyup', ensureData);
 
 const cardObject = {
   name: document.querySelector('.js-card-title-first'),
@@ -61,37 +67,29 @@ getLocalStorage();
 
 // cambiar los colores
 
+let pallete = document.querySelector('.design__form');
 let card = document.querySelector('.js-card');
-let themeOne = document.getElementById('green');
-let themeTwo = document.getElementById('red');
-let themeThree = document.getElementById('other');
 
-themeOne.addEventListener('change', paletteOne);
+function changePallete(ev) {
+  if (ev.target.id === 'green') {
+    card.classList.add('card--theme1');
+    card.classList.remove('card--theme2');
+    card.classList.remove('card--theme3');
 
-function paletteOne() {
-  card.classList.add('card--theme1');
-  card.classList.remove('card--theme2');
-  card.classList.remove('card--theme3');
-  ensureData();
+  } else if (ev.target.id === 'red') {
+    card.classList.add('card--theme2');
+    card.classList.remove('card--theme3');
+    card.classList.remove('card--theme1');
+
+  } else {
+    card.classList.add('card--theme3');
+    card.classList.remove('card--theme2');
+    card.classList.remove('card--theme1');
+  }
 }
 
-themeTwo.addEventListener('change', paletteTwo);
 
-function paletteTwo() {
-  card.classList.add('card--theme2');
-  card.classList.remove('card--theme3');
-  card.classList.remove('card--theme1');
-  ensureData();
-}
-
-themeThree.addEventListener('change', paletteThree);
-
-function paletteThree() {
-  card.classList.add('card--theme3');
-  card.classList.remove('card--theme2');
-  card.classList.remove('card--theme1');
-  ensureData();
-}
+pallete.addEventListener('change', changePallete);
 
 // boton reset
 
@@ -135,7 +133,7 @@ function previewFile() {
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function() {
+  reader.onloadend = function () {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };
