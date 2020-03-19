@@ -1,6 +1,7 @@
 'use strict';
 
 // JS del formulario
+const formComplete = document.querySelector('.complete__form');
 
 const formObject = {
   name: document.querySelector('.js-form-input-name'),
@@ -8,15 +9,19 @@ const formObject = {
   email: document.querySelector('.js-form-input-email'),
   tel: document.querySelector('.js-form-input-tel'),
   linkedin: document.querySelector('.js-form-input-linkedin'),
-  github: document.querySelector('.js-form-input-github')
+  github: document.querySelector('.js-form-input-github'),
 };
 
-formObject.name.addEventListener('keyup', form);
-formObject.job.addEventListener('keyup', form);
-formObject.email.addEventListener('keyup', form);
-formObject.tel.addEventListener('keyup', form);
-formObject.linkedin.addEventListener('keyup', form);
-formObject.github.addEventListener('keyup', form);
+formComplete.addEventListener('keyup', ensureData);
+
+//ESTO NO HACE FALTA SI HACEMOS EL LISTENER A TODO EL FORMULARIO.
+
+// formObject.name.addEventListener('keyup', ensureData);
+// formObject.job.addEventListener('keyup', ensureData);
+// formObject.email.addEventListener('keyup', ensureData);
+// formObject.tel.addEventListener('keyup', ensureData);
+// formObject.linkedin.addEventListener('keyup', ensureData);
+// formObject.github.addEventListener('keyup', ensureData);
 
 const cardObject = {
   name: document.querySelector('.js-card-title-first'),
@@ -28,26 +33,48 @@ const cardObject = {
   image: document.querySelector('.js-card-img')
 };
 
-function form(event) {
-  if (event.currentTarget.classList.contains('js-form-input-name')) {
-    cardObject.name.innerHTML = event.currentTarget.value;
-  } else if (event.currentTarget.classList.contains('js-form-input-job')) {
-    cardObject.job.innerHTML = event.currentTarget.value;
-  } else if (event.currentTarget.classList.contains('js-form-input-email')) {
-    cardObject.email.setAttribute('href', `mailto: ${formObject.email.value}`);
-  } else if (event.currentTarget.classList.contains('js-form-input-tel')) {
-    cardObject.tel.setAttribute('href', formObject.tel.value);
-  } else if (event.currentTarget.classList.contains('js-form-input-linkedin')) {
-    cardObject.linkedin.setAttribute('href', formObject.linkedin.value);
-  } else if (event.currentTarget.classList.contains('js-form-input-github')) {
-    cardObject.github.setAttribute('href', formObject.github.value);
+function setLocalStorage() {
+  const data = {};
+  for (const input in formObject) {
+    data[input] = formObject[input].value;
   }
+  localStorage.setItem('data', JSON.stringify(data));
+  // falta la mandanga de la paleta y la foto
 }
+
+function getLocalStorage() {
+  const data = JSON.parse(localStorage.getItem('data'));
+  if (data !== null) {
+    for (const input in formObject) {
+      formObject[input].value = data[input];
+    }
+  }
+  ensureData();
+}
+
+function ensureData() {
+  cardObject.name.innerHTML = formObject.name.value || 'Nombre Apellido';
+  cardObject.job.innerHTML = formObject.job.value || 'Puesto de trabajo';
+  document.querySelector('.js-a-mobile').href = 'tel:' + formObject.tel.value;
+  document.querySelector('.js-a-mail').href = 'mailto:' + formObject.email.value;
+  document.querySelector('.js-a-linkedin').href = formObject.linkedin.value;
+  document.querySelector('.js-a-github').href = formObject.github.value;
+
+  //NO FUNCIONAN LOS ENLACES CON ESTA FORMA
+  // cardObject.tel.setAttribute('href', formObject.value);
+  // cardObject.email.setAttribute('href', formObject.value);
+  // cardObject.linkedin.setAttribute('href', formObject.value);
+  // cardObject.github.setAttribute('href', formObject.value);
+  setLocalStorage();
+}
+
+
+getLocalStorage();
 
 // cambiar los colores
 
-let card = document.querySelector('.js-card');
 let pallete = document.querySelector('.design__form');
+let card = document.querySelector('.js-card');
 
 function changePallete(ev) {
   if (ev.target.id === 'green') {
@@ -70,13 +97,15 @@ function changePallete(ev) {
 
 pallete.addEventListener('change', changePallete);
 
-
 // boton reset
 
 const btnReset = document.querySelector('.js-btn-reset');
 
 function reset() {
-  document.location.reload();
+  for (const input in formObject) {
+    formObject[input].value = '';
+  }
+  ensureData();
 }
 btnReset.addEventListener('click', reset);
 // Share section Javascript
@@ -103,8 +132,8 @@ button.addEventListener('click', createCard);
 
 // prueba archivo
 const invisibleInput = document.querySelector('.js-input-invisible');
-const divPicture = document.querySelector('.js-divPicture');
-
+/* const divPicture = document.querySelector('.js-divPicture');
+ */
 function previewFile() {
   var preview = document.querySelector('.js-img');
   var file = document.querySelector('.js-input-invisible').files[0];
