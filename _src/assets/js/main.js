@@ -9,19 +9,10 @@ const formObject = {
   email: document.querySelector('.js-form-input-email'),
   tel: document.querySelector('.js-form-input-tel'),
   linkedin: document.querySelector('.js-form-input-linkedin'),
-  github: document.querySelector('.js-form-input-github'),
+  github: document.querySelector('.js-form-input-github')
 };
 
 formComplete.addEventListener('keyup', ensureData);
-
-//ESTO NO HACE FALTA SI HACEMOS EL LISTENER A TODO EL FORMULARIO.
-
-// formObject.name.addEventListener('keyup', ensureData);
-// formObject.job.addEventListener('keyup', ensureData);
-// formObject.email.addEventListener('keyup', ensureData);
-// formObject.tel.addEventListener('keyup', ensureData);
-// formObject.linkedin.addEventListener('keyup', ensureData);
-// formObject.github.addEventListener('keyup', ensureData);
 
 const cardObject = {
   name: document.querySelector('.js-card-title-first'),
@@ -55,19 +46,12 @@ function getLocalStorage() {
 function ensureData() {
   cardObject.name.innerHTML = formObject.name.value || 'Nombre Apellido';
   cardObject.job.innerHTML = formObject.job.value || 'Puesto de trabajo';
-  document.querySelector('.js-a-mobile').href = 'tel:' + formObject.tel.value;
-  document.querySelector('.js-a-mail').href = 'mailto:' + formObject.email.value;
-  document.querySelector('.js-a-linkedin').href = formObject.linkedin.value;
-  document.querySelector('.js-a-github').href = formObject.github.value;
-
-  //NO FUNCIONAN LOS ENLACES CON ESTA FORMA
-  // cardObject.tel.setAttribute('href', formObject.value);
-  // cardObject.email.setAttribute('href', formObject.value);
-  // cardObject.linkedin.setAttribute('href', formObject.value);
-  // cardObject.github.setAttribute('href', formObject.value);
+  cardObject.tel.href = 'tel:' + formObject.tel.value;
+  cardObject.email.href = 'mailto:' + formObject.email.value;
+  cardObject.linkedin.href = formObject.linkedin.value;
+  cardObject.github.href = formObject.github.value;
   setLocalStorage();
 }
-
 
 getLocalStorage();
 
@@ -81,19 +65,16 @@ function changePallete(ev) {
     card.classList.add('card--theme1');
     card.classList.remove('card--theme2');
     card.classList.remove('card--theme3');
-
   } else if (ev.target.id === 'red') {
     card.classList.add('card--theme2');
     card.classList.remove('card--theme3');
     card.classList.remove('card--theme1');
-
   } else {
     card.classList.add('card--theme3');
     card.classList.remove('card--theme2');
     card.classList.remove('card--theme1');
   }
 }
-
 
 pallete.addEventListener('change', changePallete);
 
@@ -139,7 +120,7 @@ function previewFile() {
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function () {
+  reader.onloadend = function() {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };
