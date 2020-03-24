@@ -21,7 +21,8 @@ const cardObject = {
   email: document.querySelector('.js-a-mail'),
   linkedin: document.querySelector('.js-a-linkedin'),
   github: document.querySelector('.js-a-github'),
-  image: document.querySelector('.js-card-img')
+  image: document.querySelector('.js-card-img'),
+  palette: document.querySelectorAll('.js-palettes').id
 };
 
 function setLocalStorage() {
@@ -42,7 +43,7 @@ function getLocalStorage() {
   }
   ensureData();
 }
-
+// guardar el palette en el objeto pero el seleccionado por el maldito usuario!!!
 function ensureData() {
   cardObject.name.innerHTML = formObject.name.value || 'Nombre Apellido';
   cardObject.job.innerHTML = formObject.job.value || 'Puesto de trabajo';
@@ -50,7 +51,7 @@ function ensureData() {
   cardObject.email.href = 'mailto:' + formObject.email.value;
   cardObject.linkedin.href = formObject.linkedin.value;
   cardObject.github.href = formObject.github.value;
-  setLocalStorage();
+  cardObject.palette = clickedId;
 }
 
 getLocalStorage();
@@ -59,13 +60,15 @@ getLocalStorage();
 
 let pallete = document.querySelector('.design__form');
 let card = document.querySelector('.js-card');
+let clickedId = cardObject.palette[0];
 
 function changePallete(ev) {
-  if (ev.target.id === 'green') {
+  clickedId = ev.target.id;
+  if (clickedId === 'green') {
     card.classList.add('card--theme1');
     card.classList.remove('card--theme2');
     card.classList.remove('card--theme3');
-  } else if (ev.target.id === 'red') {
+  } else if (clickedId === 'red') {
     card.classList.add('card--theme2');
     card.classList.remove('card--theme3');
     card.classList.remove('card--theme1');
@@ -74,6 +77,9 @@ function changePallete(ev) {
     card.classList.remove('card--theme2');
     card.classList.remove('card--theme1');
   }
+  console.log(clickedId);
+  ensureData();
+  return clickedId;
 }
 
 pallete.addEventListener('change', changePallete);
