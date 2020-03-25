@@ -27,6 +27,8 @@ const cardObject = {
 };
 let card = document.querySelector(".js-card");
 
+let photo;
+
 getLocalStorage();
 
 function setLocalStorage() {
@@ -115,6 +117,46 @@ divList[2].addEventListener("click", unCollapse);
 /////////////////
 
 function createCard() {
+  const json = {
+    palette: getRadioValue(),
+    name: document.querySelector(".js-form-input-name").value,
+    job: document.querySelector(".js-form-input-job").value,
+    tel: document.querySelector(".js-form-input-tel").value,
+    email: document.querySelector(".js-form-input-email").value,
+    linkedin: document.querySelector(".js-form-input-linkedin").value,
+    github: document.querySelector(".js-form-input-github").value,
+    photo: photo
+  };
+
+  console.log(json);
+
+  fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
+    method: "POST",
+    body: JSON.stringify(json),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(function(resp) {
+      return resp.json();
+    })
+    .then(function(result) {
+      showURL(result);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+}
+
+function showURL(result) {
+  let cardUrl = result.cardURL;
+  console.log(cardUrl);
+  const twitter = document.querySelector(".js-share-button");
+  const link = document.querySelector(".js-share-link");
+  link.innerHTML = cardUrl;
+  link.href = cardUrl;
+  twitter.href = `https://twitter.com/intent/tweet?text=Mi+tarjeta+se+ha+creado+${cardUrl}`;
+
   button.classList.remove("share__button__enabled");
   button.classList.add("share__button__unabled");
   myCard.classList.remove("hidden");
@@ -133,6 +175,7 @@ function previewFile() {
 
   reader.onloadend = function() {
     preview.src = reader.result;
+    photo = reader.result;
     cardObject.image.src = preview.src;
   };
 
@@ -149,6 +192,24 @@ function toggleBtnStyle() {
   );
   label.classList.toggle("hover");
 }
+
+function getRadioValue() {
+  let radios = document.getElementsByName("color");
+
+  for (let radio of radios) {
+    if (radio.checked) {
+      if (radio.value === "green") {
+        return 1;
+      } else if (radio.value === "red") {
+        return 2;
+      } else {
+        return 3;
+      }
+    }
+  }
+  return 1;
+}
+
 invisibleInput.addEventListener("onchange", previewFile);
 invisibleInput.addEventListener("mouseover", toggleBtnStyle);
 invisibleInput.addEventListener("mouseout", toggleBtnStyle);
