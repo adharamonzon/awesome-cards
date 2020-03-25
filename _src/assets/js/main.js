@@ -9,8 +9,11 @@ const formObject = {
   email: document.querySelector('.js-form-input-email'),
   tel: document.querySelector('.js-form-input-tel'),
   linkedin: document.querySelector('.js-form-input-linkedin'),
-  github: document.querySelector('.js-form-input-github')
+  github: document.querySelector('.js-form-input-github'),
+  palette: document.querySelectorAll('.js-input-color')
+
 };
+
 
 formComplete.addEventListener('keyup', ensureData);
 
@@ -21,8 +24,13 @@ const cardObject = {
   email: document.querySelector('.js-a-mail'),
   linkedin: document.querySelector('.js-a-linkedin'),
   github: document.querySelector('.js-a-github'),
-  image: document.querySelector('.js-card-img')
+  image: document.querySelector('.js-card-img'),
+  palette: document.querySelectorAll('.js-input-color')
 };
+let card = document.querySelector('.js-card');
+
+
+getLocalStorage();
 
 function setLocalStorage() {
   const data = {};
@@ -34,12 +42,16 @@ function setLocalStorage() {
 }
 
 function getLocalStorage() {
+  if (localStorage.getItem('datapalette')) {
+    card.classList = (localStorage.getItem('datapalette'));
+  }
   const data = JSON.parse(localStorage.getItem('data'));
   if (data !== null) {
     for (const input in formObject) {
       formObject[input].value = data[input];
     }
   }
+
   ensureData();
 }
 
@@ -53,30 +65,32 @@ function ensureData() {
   setLocalStorage();
 }
 
-getLocalStorage();
 
 // cambiar los colores
 
-let pallete = document.querySelector('.design__form');
-let card = document.querySelector('.js-card');
+let palette = document.querySelector('.design__form');
 
-function changePallete(ev) {
-  if (ev.target.id === 'green') {
-    card.classList.add('card--theme1');
-    card.classList.remove('card--theme2');
-    card.classList.remove('card--theme3');
-  } else if (ev.target.id === 'red') {
-    card.classList.add('card--theme2');
-    card.classList.remove('card--theme3');
-    card.classList.remove('card--theme1');
+function changePalette(ev) {
+  const defaultClasses = 'card js-card';
+  if (ev.target.value === 'green') {
+    card.classList = defaultClasses + ' card--theme1';
+    // card.classList.add('card--theme1');
+    // card.classList.remove('card--theme2');
+    // card.classList.remove('card--theme3');
+  } else if (ev.target.value === 'red') {
+    card.classList = defaultClasses + ' card--theme2';
+    // card.classList.add('card--theme2');
+    // card.classList.remove('card--theme3');
+    // card.classList.remove('card--theme1');
   } else {
-    card.classList.add('card--theme3');
-    card.classList.remove('card--theme2');
-    card.classList.remove('card--theme1');
+    card.classList = defaultClasses + ' card--theme3';
+    // card.classList.add('card--theme3');
+    // card.classList.remove('card--theme2');
+    // card.classList.remove('card--theme1');
   }
+  localStorage.setItem('datapalette', card.classList);
 }
-
-pallete.addEventListener('change', changePallete);
+palette.addEventListener('change', changePalette);
 
 // boton reset
 
@@ -120,7 +134,7 @@ function previewFile() {
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function() {
+  reader.onloadend = function () {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };
