@@ -2,6 +2,21 @@
 
 // JS del formulario
 const formComplete = document.querySelector('.complete__form');
+// const inputPalettesCheked = document.querySelectorAll('.js-cheked-input');
+// let palletes = [];
+
+// const listenPaletteClick = () => {
+
+//   for (const inputPaletteChecked of inputPalettesCheked) {
+//     inputPaletteChecked.addEventListener('click', handleClick);
+//   }
+// };
+// const handleClick = (ev) => {
+//   const clickedPalette = parseInt(ev.currentTaregt.id);
+//   for (const putaPalette of palletes) {
+
+//   }
+// }
 
 const formObject = {
   name: document.querySelector('.js-form-input-name'),
@@ -10,6 +25,7 @@ const formObject = {
   tel: document.querySelector('.js-form-input-tel'),
   linkedin: document.querySelector('.js-form-input-linkedin'),
   github: document.querySelector('.js-form-input-github')
+  // palette: parseInt(inputPaletteChecked.value)
 };
 
 formComplete.addEventListener('keyup', ensureData);
@@ -22,8 +38,8 @@ const cardObject = {
   linkedin: document.querySelector('.js-a-linkedin'),
   github: document.querySelector('.js-a-github'),
   image: document.querySelector('.js-card-img')
+  // palette: parseInt(inputPaletteChecked.value)
 };
-
 function setLocalStorage() {
   const data = {};
   for (const input in formObject) {
@@ -61,11 +77,11 @@ let pallete = document.querySelector('.design__form');
 let card = document.querySelector('.js-card');
 
 function changePallete(ev) {
-  if (ev.target.id === 'green') {
+  if (ev.target.id === 1) {
     card.classList.add('card--theme1');
     card.classList.remove('card--theme2');
     card.classList.remove('card--theme3');
-  } else if (ev.target.id === 'red') {
+  } else if (ev.target.id === 2) {
     card.classList.add('card--theme2');
     card.classList.remove('card--theme3');
     card.classList.remove('card--theme1');
@@ -91,15 +107,24 @@ function reset() {
 btnReset.addEventListener('click', reset);
 // Share section Javascript
 
-const shareButtonDiv = document.querySelector('.js-share__button');
+const shareButtonDiv = document.querySelectorAll('.js-share__button');
 const button = document.querySelector('.js-button');
 const divList = document.querySelectorAll('.js-title-collapse');
 const myCard = document.querySelector('.js-share__card');
 
 function unCollapse() {
-  shareButtonDiv.classList.toggle('hidden');
+  for (const div of shareButtonDiv) {
+    if (div.classList.contains('hidden')) {
+      div.classList.remove('hidden');
+    } else {
+      div.classList.add('hidden');
+    }
+  }
 }
-divList[2].addEventListener('click', unCollapse);
+
+for (const item of divList) {
+  item.addEventListener('click', unCollapse);
+}
 
 /////////////////
 
