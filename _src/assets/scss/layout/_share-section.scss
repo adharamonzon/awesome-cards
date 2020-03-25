@@ -4,6 +4,7 @@
     flex-direction: column;
     margin-bottom: 1.875rem;
   }
+
   &__button {
     display: flex;
     flex-direction: column;
@@ -23,9 +24,11 @@
       margin-top: 1.875rem;
       margin-bottom: 1.875rem;
     }
+
     &__enabled:focus {
       outline: 0;
     }
+
     &__unabled {
       display: flex;
       flex-direction: row;
@@ -39,6 +42,7 @@
       margin-top: 1.875rem;
       margin-bottom: 1.875rem;
     }
+
     &__unabled:focus {
       outline: 0;
     }
@@ -65,12 +69,14 @@
       margin-top: 1.25rem;
       padding-right: 0.5625rem;
     }
+
     &__link {
       font-size: 0.75rem;
       color: $color-orange;
       text-decoration: none;
       font-family: $font-secondary;
     }
+
     &__twitter {
       font-size: 0.875rem;
       font-family: $font-secondary;
@@ -99,6 +105,10 @@
 
 .hidden {
   display: none;
+}
+
+.collapse--open {
+  display: block;
 }
 
 .fa-twitter {

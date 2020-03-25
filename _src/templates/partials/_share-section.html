@@ -1,12 +1,7 @@
 <!-- Share section hidden -->
-<section class="share share__collapsed">
-  <partial
-    src="_title-collapse.html"
-    img="./assets/images/share-alt-solid.svg"
-    name="comparte"
-  ></partial>
-
-  <div class="share__button share__button hidden js-share__button">
+<partial src="_title-collapse.html" img="./assets/images/share-alt-solid.svg" name="comparte"></partial>
+<section class="share share__collapsed collapse--share">
+  <div class="share__button hidden collapse--share share__button js-share__button" data="3">
     <button class="share__button__enabled js-button">
       <i class="far fa-address-card"></i>
       <h2 class="share__button__title">Crear tarjeta</h2>
@@ -14,12 +9,8 @@
 
     <div class="share__card js-share__card hidden">
       <span class="share__card__text">La tarjeta ha sido creada:</span>
-      <a href="#" class="share__card__link"
-        >https://awesome-profile-card.com?id=A456DF0001</a
-      >
-      <a href="#" target="_blank" class="share__card__twitter">
-        <i class="fab fa-twitter"></i>Compartir en twitter
-      </a>
+      <a href="#" class="share__card__link">https://awesome-profile-card.com?id=A456DF0001</a>
+      <a href="#" target="_blank" class="share__card__twitter"> <i class="fab fa-twitter"></i>Compartir en twitter </a>
     </div>
   </div>
 </section>

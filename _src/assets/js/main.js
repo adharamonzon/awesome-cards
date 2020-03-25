@@ -40,6 +40,7 @@ const cardObject = {
   image: document.querySelector('.js-card-img')
   // palette: parseInt(inputPaletteChecked.value)
 };
+
 function setLocalStorage() {
   const data = {};
   for (const input in formObject) {
@@ -113,12 +114,9 @@ const divList = document.querySelectorAll('.js-title-collapse');
 const myCard = document.querySelector('.js-share__card');
 
 function unCollapse() {
+
   for (const div of shareButtonDiv) {
-    if (div.classList.contains('hidden')) {
-      div.classList.remove('hidden');
-    } else {
-      div.classList.add('hidden');
-    }
+    div.classList.toggle('hidden');
   }
 }
 
@@ -145,7 +143,7 @@ function previewFile() {
   var file = document.querySelector('.js-input-invisible').files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function() {
+  reader.onloadend = function () {
     preview.src = reader.result;
     cardObject.image.src = preview.src;
   };
