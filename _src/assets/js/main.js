@@ -105,6 +105,7 @@ function reset() {
   ensureData();
 }
 btnReset.addEventListener("click", reset);
+
 // Share section Javascript
 
 const shareButtonDiv = document.querySelector(".js-share__button");
