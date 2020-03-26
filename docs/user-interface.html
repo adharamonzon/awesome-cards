@@ -60,7 +60,8 @@
                         <p class="design__content">Colores</p>
                         <form action="" class="design__form">
                             <div class="design__radio">
-                                <input type="radio" id="green" name="color" value="green" />
+                                <input type="radio" id="green" name="color" value="green" class="js-input-color"
+                                />
                                 <label for="green" class="design__paleta">
                                     <div class="design__paleta__1"></div>
                                     <div class="design__paleta__2"></div>
@@ -68,7 +69,8 @@
                                 </label>
                             </div>
                             <div class="design__radio">
-                                <input type="radio" id="red" name="color" value="red" />
+                                <input type="radio" id="red" name="color" value="red" class="js-input-color"
+                                />
                                 <label for="red" class="design__paleta">
                                     <div class="design__paleta__4"></div>
                                     <div class="design__paleta__5"></div>
@@ -76,7 +78,8 @@
                                 </label>
                             </div>
                             <div class="design__radio">
-                                <input type="radio" id="other" name="color" value="other" />
+                                <input type="radio" id="other" name="color" value="other" class="js-input-color"
+                                />
                                 <label for="" class="design__paleta">
                                     <div class="design__paleta__7"></div>
                                     <div class="design__paleta__8"></div>
@@ -143,8 +146,10 @@
                             <button class="share__button__enabled js-button"> <i class="far fa-address-card"></i> 
                                  <h2 class="share__button__title">Crear tarjeta</h2> 
                             </button>
-                            <div class="share__card js-share__card hidden"> <span class="share__card__text">La tarjeta ha sido creada:</span>  <a href="#"
-                                class="share__card__link">https://awesome-profile-card.com?id=A456DF0001</a       >       <a href="#" target="_blank" class="share__card__twitter">         <i class="fab fa-twitter"></i>Compartir en twitter       </a> 
+                            <div class="share__card js-share__card hidden"> <span class="share__card__text">La tarjeta ha sido creada:</span>  <a href=""
+                                class="share__card__link js-share-link"></a> 
+                                <!-- Reemplazar la URL a compartir
+                                por la http de google --> <a href="" target="_blank" class="share__card__twitter js-share-button">         <i class="fab fa-twitter"></i>Compartir en twitter       </a> 
                             </div>
                         </div>
                     </section>
