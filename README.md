@@ -25,5 +25,5 @@ El trabajo se realizo el primer sprint en presencial y el segundo sprint en remo
 
 ## Este es el resultado:
 
-[!Imagen de la aplicación](http://public/assets/images/imagen-app.png)
+![Imagen de la aplicación](./public/assets/images/imagen-app.png)
 https://adharamonzon.github.io/awesome-cards/
